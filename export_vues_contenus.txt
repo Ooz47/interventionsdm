@@ -1,0 +1,1916 @@
+$view = new view();
+$view->name = 'contenu';
+$view->description = '';
+$view->tag = 'default';
+$view->base_table = 'node';
+$view->human_name = 'contenus';
+$view->core = 7;
+$view->api_version = '3.0';
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+/* Display: Master */
+$handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['title'] = 'Textes de CLA';
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['use_more_text'] = 'plus';
+$handler->display->display_options['access']['type'] = 'perm';
+$handler->display->display_options['cache']['type'] = 'none';
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
+$handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+$handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
+$handler->display->display_options['pager']['type'] = 'full';
+$handler->display->display_options['pager']['options']['items_per_page'] = '10';
+$handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
+$handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tout -';
+$handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
+$handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
+$handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
+$handler->display->display_options['pager']['options']['tags']['next'] = 'suivant ›';
+$handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['row_plugin'] = 'fields';
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['label'] = '';
+$handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image']['settings'] = array(
+  'image_style' => 'moyen',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image_1']['id'] = 'field_image_1';
+$handler->display->display_options['fields']['field_image_1']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image_1']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image_1']['label'] = '';
+$handler->display->display_options['fields']['field_image_1']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image_1']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image_1']['settings'] = array(
+  'image_style' => 'petit',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['field_auteur']['alter']['text'] = '<i class="fa fa-pencil-square-o"></i> [field_auteur]';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-calendar"></i> [created]';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'short';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Nombre de commentaires */
+$handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+$handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['label'] = '';
+$handler->display->display_options['fields']['comment_count']['exclude'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['text'] = '<i class="fa fa-comments"></i> [comment_count]';
+$handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['comment_count']['separator'] = ' ';
+/* Critère de tri: Contenu : Date de publication */
+$handler->display->display_options['sorts']['created']['id'] = 'created';
+$handler->display->display_options['sorts']['created']['table'] = 'node';
+$handler->display->display_options['sorts']['created']['field'] = 'created';
+$handler->display->display_options['sorts']['created']['order'] = 'DESC';
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+/* Display: Textes de CLA */
+$handler = $view->new_display('page', 'Textes de CLA', 'page');
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['label'] = '';
+$handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image']['settings'] = array(
+  'image_style' => 'moyen',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['field_auteur']['alter']['text'] = '<i class="fa fa-pencil-square-o"></i> [field_auteur]';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'court_texte';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['max_length'] = '250';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_plain';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_thematique']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_thematique']['separator'] = ' ';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Critère de filtrage: Contenu : Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'article' => 'article',
+);
+/* Critère de filtrage: Contenu : Auteur (field_auteur) */
+$handler->display->display_options['filters']['field_auteur_tid']['id'] = 'field_auteur_tid';
+$handler->display->display_options['filters']['field_auteur_tid']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['filters']['field_auteur_tid']['field'] = 'field_auteur_tid';
+$handler->display->display_options['filters']['field_auteur_tid']['value'] = array(
+  9 => '9',
+);
+$handler->display->display_options['filters']['field_auteur_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_auteur_tid']['vocabulary'] = 'auteurs';
+$handler->display->display_options['path'] = 'textes-cla';
+$handler->display->display_options['menu']['type'] = 'normal';
+$handler->display->display_options['menu']['title'] = 'Textes de CLA';
+$handler->display->display_options['menu']['weight'] = '0';
+$handler->display->display_options['menu']['name'] = 'main-menu';
+$handler->display->display_options['menu']['context'] = 0;
+$handler->display->display_options['menu']['context_only_inline'] = 0;
+
+/* Display: Textes d'invités */
+$handler = $view->new_display('page', 'Textes d\'invités', 'page_1');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Textes d\'invités';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['label'] = '';
+$handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image']['settings'] = array(
+  'image_style' => 'moyen',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['field_auteur']['alter']['text'] = '<i class="fa fa-pencil-square-o"></i> [field_auteur]';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-calendar"></i> [created]';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'court_texte';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['max_length'] = '250';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_plain';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_thematique']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_thematique']['separator'] = ' ';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Critère de filtrage: Contenu : Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'article' => 'article',
+);
+/* Critère de filtrage: Contenu : Auteur (field_auteur) */
+$handler->display->display_options['filters']['field_auteur_tid']['id'] = 'field_auteur_tid';
+$handler->display->display_options['filters']['field_auteur_tid']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['filters']['field_auteur_tid']['field'] = 'field_auteur_tid';
+$handler->display->display_options['filters']['field_auteur_tid']['operator'] = 'not';
+$handler->display->display_options['filters']['field_auteur_tid']['value'] = array(
+  9 => '9',
+);
+$handler->display->display_options['filters']['field_auteur_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_auteur_tid']['vocabulary'] = 'auteurs';
+$handler->display->display_options['path'] = 'textes-invites';
+$handler->display->display_options['menu']['type'] = 'normal';
+$handler->display->display_options['menu']['title'] = 'Textes d\'invités';
+$handler->display->display_options['menu']['weight'] = '0';
+$handler->display->display_options['menu']['name'] = 'main-menu';
+$handler->display->display_options['menu']['context'] = 0;
+$handler->display->display_options['menu']['context_only_inline'] = 0;
+
+/* Display: PageNotes de lectures */
+$handler = $view->new_display('page', 'PageNotes de lectures', 'page_2');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Notes de lectures';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['label'] = '';
+$handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image']['settings'] = array(
+  'image_style' => 'moyen',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['field_auteur']['alter']['text'] = '<i class="fa fa-pencil-square-o"></i> [field_auteur]';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-calendar"></i> [created]';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'court_texte';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['max_length'] = '250';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_plain';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_thematique']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_thematique']['separator'] = ' ';
+/* Champ: Contenu : Nombre de commentaires */
+$handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+$handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['label'] = '';
+$handler->display->display_options['fields']['comment_count']['exclude'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['text'] = '<i class="fa fa-comments"></i> [comment_count]';
+$handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['comment_count']['separator'] = ' ';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Critère de filtrage: Contenu : Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'notes_de_lectures' => 'notes_de_lectures',
+);
+$handler->display->display_options['path'] = 'notes-de-lectures';
+$handler->display->display_options['menu']['type'] = 'normal';
+$handler->display->display_options['menu']['title'] = 'Notes de lectures';
+$handler->display->display_options['menu']['weight'] = '0';
+$handler->display->display_options['menu']['name'] = 'main-menu';
+$handler->display->display_options['menu']['context'] = 0;
+$handler->display->display_options['menu']['context_only_inline'] = 0;
+
+/* Display: Documents */
+$handler = $view->new_display('page', 'Documents', 'page_3');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Documents';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['label'] = '';
+$handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image']['settings'] = array(
+  'image_style' => 'moyen',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-calendar"></i> [created]';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'court_texte';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['max_length'] = '250';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_plain';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_thematique']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_thematique']['separator'] = ' ';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Critère de filtrage: Contenu : Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'documents' => 'documents',
+);
+$handler->display->display_options['path'] = 'documents';
+$handler->display->display_options['menu']['type'] = 'normal';
+$handler->display->display_options['menu']['title'] = 'Documents';
+$handler->display->display_options['menu']['weight'] = '0';
+$handler->display->display_options['menu']['name'] = 'main-menu';
+$handler->display->display_options['menu']['context'] = 0;
+$handler->display->display_options['menu']['context_only_inline'] = 0;
+
+/* Display: Actualités */
+$handler = $view->new_display('page', 'Actualités', 'page_4');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Actualités';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['label'] = '';
+$handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image']['settings'] = array(
+  'image_style' => 'moyen',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-calendar"></i> [created]';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'court_texte';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['max_length'] = '250';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_plain';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_thematique']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_thematique']['separator'] = ' ';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Critère de filtrage: Contenu : Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'actualit_' => 'actualit_',
+);
+$handler->display->display_options['path'] = 'actualites';
+$handler->display->display_options['menu']['type'] = 'normal';
+$handler->display->display_options['menu']['title'] = 'Actualités';
+$handler->display->display_options['menu']['weight'] = '0';
+$handler->display->display_options['menu']['name'] = 'main-menu';
+$handler->display->display_options['menu']['context'] = 0;
+$handler->display->display_options['menu']['context_only_inline'] = 0;
+
+/* Display: Revue de presse */
+$handler = $view->new_display('page', 'Revue de presse', 'page_5');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Revue de presse';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['label'] = '';
+$handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image']['settings'] = array(
+  'image_style' => 'moyen',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['field_auteur']['alter']['text'] = '<i class="fa fa-pencil-square-o"></i>';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-calendar"></i> [created]';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'court_texte';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['max_length'] = '250';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_plain';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_thematique']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_thematique']['separator'] = ' ';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Critère de filtrage: Contenu : Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'revue_de_presse' => 'revue_de_presse',
+);
+$handler->display->display_options['path'] = 'revue-de-presse';
+$handler->display->display_options['menu']['type'] = 'normal';
+$handler->display->display_options['menu']['title'] = 'Revue de presse';
+$handler->display->display_options['menu']['weight'] = '0';
+$handler->display->display_options['menu']['name'] = 'main-menu';
+$handler->display->display_options['menu']['context'] = 0;
+$handler->display->display_options['menu']['context_only_inline'] = 0;
+
+/* Display: Bloc Articles récents */
+$handler = $view->new_display('block', 'Bloc Articles récents', 'block_1');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Articles récents';
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '5';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image_1']['id'] = 'field_image_1';
+$handler->display->display_options['fields']['field_image_1']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image_1']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image_1']['label'] = '';
+$handler->display->display_options['fields']['field_image_1']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image_1']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image_1']['settings'] = array(
+  'image_style' => 'petit',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['field_auteur']['alter']['text'] = '<i class="fa fa-pencil-square-o"></i> [field_auteur]';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-calendar"></i> [created]';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'court_texte';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['max_length'] = '125';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_plain';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Critère de filtrage: Contenu : Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['operator'] = 'not in';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'page' => 'page',
+);
+$handler->display->display_options['block_description'] = 'Articles récents';
+
+/* Display: Bloc Dernières actualités */
+$handler = $view->new_display('block', 'Bloc Dernières actualités', 'block_2');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Actualités Martinique';
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '4';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['label'] = '';
+$handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image']['settings'] = array(
+  'image_style' => 'moyen',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-calendar"></i> [created]';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'court_texte';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['max_length'] = '250';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_plain';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_thematique']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_thematique']['separator'] = ' ';
+/* Champ: Contenu : Chemin */
+$handler->display->display_options['fields']['path']['id'] = 'path';
+$handler->display->display_options['fields']['path']['table'] = 'node';
+$handler->display->display_options['fields']['path']['field'] = 'path';
+$handler->display->display_options['fields']['path']['label'] = '';
+$handler->display->display_options['fields']['path']['exclude'] = TRUE;
+$handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['path']['absolute'] = TRUE;
+/* Champ: Contenu : Nombre de commentaires */
+$handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+$handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['label'] = '';
+$handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['text'] = '<i class="fa fa-comments"></i> [comment_count] commentaires';
+$handler->display->display_options['fields']['comment_count']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['path'] = '[path]#comments';
+$handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Critère de filtrage: Contenu : Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'actualit_' => 'actualit_',
+);
+/* Critère de filtrage: Contenu : Région (field_region) */
+$handler->display->display_options['filters']['field_region_tid']['id'] = 'field_region_tid';
+$handler->display->display_options['filters']['field_region_tid']['table'] = 'field_data_field_region';
+$handler->display->display_options['filters']['field_region_tid']['field'] = 'field_region_tid';
+$handler->display->display_options['filters']['field_region_tid']['value'] = array(
+  1 => '1',
+);
+$handler->display->display_options['filters']['field_region_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_region_tid']['vocabulary'] = 'r_gion_territoire_pays';
+$handler->display->display_options['block_description'] = 'Dernières actualités';
+
+/* Display: Bloc Textes de CLA */
+$handler = $view->new_display('block', 'Bloc Textes de CLA', 'block_3');
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '2';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['label'] = '';
+$handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image']['settings'] = array(
+  'image_style' => 'petit_allonge',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['field_auteur']['alter']['text'] = '<i class="fa fa-pencil-square-o"></i> [field_auteur]';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-calendar"></i> [created]';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'court_texte';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Chemin */
+$handler->display->display_options['fields']['path']['id'] = 'path';
+$handler->display->display_options['fields']['path']['table'] = 'node';
+$handler->display->display_options['fields']['path']['field'] = 'path';
+$handler->display->display_options['fields']['path']['exclude'] = TRUE;
+$handler->display->display_options['fields']['path']['absolute'] = TRUE;
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['max_length'] = '125';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_thematique']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_thematique']['separator'] = ' ';
+/* Champ: Contenu : Nombre de commentaires */
+$handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+$handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['label'] = '';
+$handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['text'] = '<i class="fa fa-comments"></i> [comment_count] commentaires';
+$handler->display->display_options['fields']['comment_count']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['path'] = '[path]#comments';
+$handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['comment_count']['separator'] = ' ';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Critère de filtrage: Contenu : Auteur (field_auteur) */
+$handler->display->display_options['filters']['field_auteur_tid']['id'] = 'field_auteur_tid';
+$handler->display->display_options['filters']['field_auteur_tid']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['filters']['field_auteur_tid']['field'] = 'field_auteur_tid';
+$handler->display->display_options['filters']['field_auteur_tid']['value'] = array(
+  9 => '9',
+);
+$handler->display->display_options['filters']['field_auteur_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_auteur_tid']['vocabulary'] = 'auteurs';
+$handler->display->display_options['block_description'] = 'Textes de CLA';
+
+/* Display: Bloc Textes d'invités */
+$handler = $view->new_display('block', 'Bloc Textes d\'invités', 'block_4');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Textes d\'invités';
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '2';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['label'] = '';
+$handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image']['settings'] = array(
+  'image_style' => 'petit_allonge',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['field_auteur']['alter']['text'] = '<i class="fa fa-pencil-square-o"></i> [field_auteur]';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-calendar"></i> [created]';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'court_texte';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['max_length'] = '125';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_thematique']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_thematique']['separator'] = ' ';
+/* Champ: Contenu : Chemin */
+$handler->display->display_options['fields']['path']['id'] = 'path';
+$handler->display->display_options['fields']['path']['table'] = 'node';
+$handler->display->display_options['fields']['path']['field'] = 'path';
+$handler->display->display_options['fields']['path']['label'] = '';
+$handler->display->display_options['fields']['path']['exclude'] = TRUE;
+$handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['path']['absolute'] = TRUE;
+/* Champ: Contenu : Nombre de commentaires */
+$handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+$handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['label'] = '';
+$handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['text'] = '<i class="fa fa-comments"></i> [comment_count] commentaires';
+$handler->display->display_options['fields']['comment_count']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['path'] = '[path]#comments';
+$handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Critère de filtrage: Contenu : Auteur (field_auteur) */
+$handler->display->display_options['filters']['field_auteur_tid']['id'] = 'field_auteur_tid';
+$handler->display->display_options['filters']['field_auteur_tid']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['filters']['field_auteur_tid']['field'] = 'field_auteur_tid';
+$handler->display->display_options['filters']['field_auteur_tid']['operator'] = 'not';
+$handler->display->display_options['filters']['field_auteur_tid']['value'] = array(
+  9 => '9',
+);
+$handler->display->display_options['filters']['field_auteur_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_auteur_tid']['vocabulary'] = 'auteurs';
+/* Critère de filtrage: Contenu : Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'article' => 'article',
+);
+$handler->display->display_options['block_description'] = 'Textes d\'invités';
+
+/* Display: Bloc Dernières actualités slide */
+$handler = $view->new_display('block', 'Bloc Dernières actualités slide', 'block_5');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Dernières actualités slide';
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '5';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'slideshow';
+$handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_cycle';
+$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
+$handler->display->display_options['style_options']['skin_info'] = array(
+  'class' => 'default',
+  'name' => 'Par défaut',
+  'module' => 'views_slideshow',
+  'path' => '',
+  'stylesheets' => array(),
+);
+$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
+$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+  'field_image' => 0,
+  'title' => 0,
+  'field_region' => 0,
+  'field_thematique' => 0,
+  'created' => 0,
+  'field_auteur' => 0,
+  'body' => 0,
+);
+$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
+$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
+$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
+$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+  'field_image' => 0,
+  'title' => 0,
+  'field_region' => 0,
+  'field_thematique' => 0,
+  'created' => 0,
+  'field_auteur' => 0,
+  'body' => 0,
+);
+$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
+$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['hide_on_single_slide'] = 1;
+$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['effect'] = 'scrollLeft';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
+$handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['label'] = '';
+$handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image']['settings'] = array(
+  'image_style' => 'grand_allonge',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['field_auteur']['alter']['text'] = '<i class="fa fa-pencil-square-o"></i> [field_auteur]';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-calendar"></i> [created]';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'court_texte';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_thematique']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_thematique']['separator'] = ' ';
+$handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Critère de tri: Contenu : Promoted to front page status */
+$handler->display->display_options['sorts']['promote']['id'] = 'promote';
+$handler->display->display_options['sorts']['promote']['table'] = 'node';
+$handler->display->display_options['sorts']['promote']['field'] = 'promote';
+$handler->display->display_options['sorts']['promote']['order'] = 'DESC';
+/* Critère de tri: Contenu : Date de publication */
+$handler->display->display_options['sorts']['created']['id'] = 'created';
+$handler->display->display_options['sorts']['created']['table'] = 'node';
+$handler->display->display_options['sorts']['created']['field'] = 'created';
+$handler->display->display_options['sorts']['created']['order'] = 'DESC';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Critère de filtrage: Contenu : Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'actualit_' => 'actualit_',
+  'article' => 'article',
+  'documents' => 'documents',
+  'notes_de_lectures' => 'notes_de_lectures',
+  'revue_de_presse' => 'revue_de_presse',
+);
+$handler->display->display_options['block_description'] = 'Dernières actualités slide';
+
+/* Display: Bloc Notes de lectures */
+$handler = $view->new_display('block', 'Bloc Notes de lectures', 'block_6');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Notes de lectures';
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '3';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image_1']['id'] = 'field_image_1';
+$handler->display->display_options['fields']['field_image_1']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image_1']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image_1']['label'] = '';
+$handler->display->display_options['fields']['field_image_1']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image_1']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image_1']['settings'] = array(
+  'image_style' => 'petit',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-calendar"></i> [created]';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'court_texte';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['max_length'] = '125';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_plain';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_thematique']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_thematique']['separator'] = ' ';
+/* Champ: Contenu : Chemin */
+$handler->display->display_options['fields']['path']['id'] = 'path';
+$handler->display->display_options['fields']['path']['table'] = 'node';
+$handler->display->display_options['fields']['path']['field'] = 'path';
+$handler->display->display_options['fields']['path']['label'] = '';
+$handler->display->display_options['fields']['path']['exclude'] = TRUE;
+$handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['path']['absolute'] = TRUE;
+/* Champ: Contenu : Nombre de commentaires */
+$handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+$handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['label'] = '';
+$handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['text'] = '<i class="fa fa-comments"></i> [comment_count] commentaires';
+$handler->display->display_options['fields']['comment_count']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['path'] = '[path]#comments';
+$handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['comment_count']['separator'] = ' ';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Critère de filtrage: Contenu : Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'notes_de_lectures' => 'notes_de_lectures',
+);
+$handler->display->display_options['block_description'] = 'Bloc Notes de lectures';
+
+/* Display: Bloc Revue de presse */
+$handler = $view->new_display('block', 'Bloc Revue de presse', 'block_7');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Revue de presse';
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '2';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image_1']['id'] = 'field_image_1';
+$handler->display->display_options['fields']['field_image_1']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image_1']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image_1']['label'] = '';
+$handler->display->display_options['fields']['field_image_1']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image_1']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image_1']['settings'] = array(
+  'image_style' => 'petit',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-calendar"></i> [created]';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'court_texte';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_thematique']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_thematique']['separator'] = ' ';
+/* Champ: Contenu : Chemin */
+$handler->display->display_options['fields']['path']['id'] = 'path';
+$handler->display->display_options['fields']['path']['table'] = 'node';
+$handler->display->display_options['fields']['path']['field'] = 'path';
+$handler->display->display_options['fields']['path']['label'] = '';
+$handler->display->display_options['fields']['path']['exclude'] = TRUE;
+$handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['path']['absolute'] = TRUE;
+/* Champ: Contenu : Nombre de commentaires */
+$handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+$handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['label'] = '';
+$handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['text'] = '<i class="fa fa-comments"></i> [comment_count] commentaires';
+$handler->display->display_options['fields']['comment_count']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['path'] = '[path]#comments';
+$handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['comment_count']['separator'] = ' ';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Critère de filtrage: Contenu : Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'revue_de_presse' => 'revue_de_presse',
+);
+$handler->display->display_options['block_description'] = 'Bloc Revue de presse';
+
+/* Display: Bloc Actualités france */
+$handler = $view->new_display('block', 'Bloc Actualités france', 'block_8');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Actualités France';
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '2';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['label'] = '';
+$handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image']['settings'] = array(
+  'image_style' => 'moyen_allonge',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-calendar"></i> [created]';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'court_texte';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['max_length'] = '250';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_plain';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_thematique']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_thematique']['separator'] = ' ';
+/* Champ: Contenu : Chemin */
+$handler->display->display_options['fields']['path']['id'] = 'path';
+$handler->display->display_options['fields']['path']['table'] = 'node';
+$handler->display->display_options['fields']['path']['field'] = 'path';
+$handler->display->display_options['fields']['path']['label'] = '';
+$handler->display->display_options['fields']['path']['exclude'] = TRUE;
+$handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['path']['absolute'] = TRUE;
+/* Champ: Contenu : Nombre de commentaires */
+$handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+$handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['label'] = '';
+$handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['text'] = '<i class="fa fa-comments"></i> [comment_count] commentaires';
+$handler->display->display_options['fields']['comment_count']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['path'] = '[path]#comments';
+$handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Critère de filtrage: Contenu : Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'actualit_' => 'actualit_',
+);
+/* Critère de filtrage: Contenu : Région (field_region) */
+$handler->display->display_options['filters']['field_region_tid']['id'] = 'field_region_tid';
+$handler->display->display_options['filters']['field_region_tid']['table'] = 'field_data_field_region';
+$handler->display->display_options['filters']['field_region_tid']['field'] = 'field_region_tid';
+$handler->display->display_options['filters']['field_region_tid']['value'] = array(
+  2 => '2',
+);
+$handler->display->display_options['filters']['field_region_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_region_tid']['vocabulary'] = 'r_gion_territoire_pays';
+$handler->display->display_options['block_description'] = 'Actualités France';
+
+/* Display: Bloc Actualités Monde */
+$handler = $view->new_display('block', 'Bloc Actualités Monde', 'block_9');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Actualités Monde';
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '2';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image']['label'] = '';
+$handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image']['settings'] = array(
+  'image_style' => 'moyen_allonge',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-calendar"></i> [created]';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'court_texte';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['max_length'] = '250';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_plain';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_thematique']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_thematique']['separator'] = ' ';
+/* Champ: Contenu : Chemin */
+$handler->display->display_options['fields']['path']['id'] = 'path';
+$handler->display->display_options['fields']['path']['table'] = 'node';
+$handler->display->display_options['fields']['path']['field'] = 'path';
+$handler->display->display_options['fields']['path']['label'] = '';
+$handler->display->display_options['fields']['path']['exclude'] = TRUE;
+$handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['path']['absolute'] = TRUE;
+/* Champ: Contenu : Nombre de commentaires */
+$handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+$handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['label'] = '';
+$handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['text'] = '<i class="fa fa-comments"></i> [comment_count] commentaires';
+$handler->display->display_options['fields']['comment_count']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['path'] = '[path]#comments';
+$handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Critère de filtrage: Contenu : Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'actualit_' => 'actualit_',
+);
+/* Critère de filtrage: Contenu : Région (field_region) */
+$handler->display->display_options['filters']['field_region_tid']['id'] = 'field_region_tid';
+$handler->display->display_options['filters']['field_region_tid']['table'] = 'field_data_field_region';
+$handler->display->display_options['filters']['field_region_tid']['field'] = 'field_region_tid';
+$handler->display->display_options['filters']['field_region_tid']['value'] = array(
+  3 => '3',
+);
+$handler->display->display_options['filters']['field_region_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_region_tid']['vocabulary'] = 'r_gion_territoire_pays';
+$handler->display->display_options['block_description'] = 'Actualités Monde';
+
+/* Display: Chronologie */
+$handler = $view->new_display('page', 'Chronologie', 'page_6');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Chronologie';
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'full';
+$handler->display->display_options['pager']['options']['items_per_page'] = '20';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['pager']['options']['id'] = '0';
+$handler->display->display_options['pager']['options']['quantity'] = '9';
+$handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
+$handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tout -';
+$handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
+$handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
+$handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
+$handler->display->display_options['pager']['options']['tags']['next'] = 'suivant ›';
+$handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Champ: Contenu : Image */
+$handler->display->display_options['fields']['field_image_1']['id'] = 'field_image_1';
+$handler->display->display_options['fields']['field_image_1']['table'] = 'field_data_field_image';
+$handler->display->display_options['fields']['field_image_1']['field'] = 'field_image';
+$handler->display->display_options['fields']['field_image_1']['label'] = '';
+$handler->display->display_options['fields']['field_image_1']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_image_1']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_image_1']['settings'] = array(
+  'image_style' => 'petit',
+  'image_link' => 'content',
+);
+/* Champ: Contenu : Titre */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Champ: Contenu : Auteur */
+$handler->display->display_options['fields']['field_auteur']['id'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['table'] = 'field_data_field_auteur';
+$handler->display->display_options['fields']['field_auteur']['field'] = 'field_auteur';
+$handler->display->display_options['fields']['field_auteur']['label'] = '';
+$handler->display->display_options['fields']['field_auteur']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['field_auteur']['alter']['text'] = '<i class="fa fa-pencil-square-o"></i> [field_auteur]';
+$handler->display->display_options['fields']['field_auteur']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_auteur']['type'] = 'taxonomy_term_reference_plain';
+/* Champ: Contenu : Date de publication */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-calendar"></i> [created]';
+$handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['created']['date_format'] = 'court_texte';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Champ: Contenu : Texte */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '250',
+);
+/* Champ: Contenu : Région */
+$handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+$handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+$handler->display->display_options['fields']['field_region']['label'] = '';
+$handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+/* Champ: Contenu : Thématique */
+$handler->display->display_options['fields']['field_thematique']['id'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['table'] = 'field_data_field_thematique';
+$handler->display->display_options['fields']['field_thematique']['field'] = 'field_thematique';
+$handler->display->display_options['fields']['field_thematique']['label'] = '';
+$handler->display->display_options['fields']['field_thematique']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_thematique']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_thematique']['separator'] = ' ';
+/* Champ: Contenu : Nombre de commentaires */
+$handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+$handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['label'] = '';
+$handler->display->display_options['fields']['comment_count']['exclude'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['comment_count']['alter']['text'] = '<i class="fa fa-comments"></i> [comment_count]';
+$handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['comment_count']['separator'] = ' ';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Critère de filtrage: Contenu : Published status */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Critère de filtrage: Contenu : Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['operator'] = 'not in';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'page' => 'page',
+);
+$handler->display->display_options['path'] = 'chronologie';
+$handler->display->display_options['menu']['type'] = 'normal';
+$handler->display->display_options['menu']['title'] = 'Chronologie';
+$handler->display->display_options['menu']['weight'] = '0';
+$handler->display->display_options['menu']['name'] = 'main-menu';
+$handler->display->display_options['menu']['context'] = 0;
+$handler->display->display_options['menu']['context_only_inline'] = 0;
+$translatables['contenu'] = array(
+  t('Master'),
+  t('Textes de CLA'),
+  t('plus'),
+  t('Appliquer'),
+  t('Réinitialiser'),
+  t('Trier par'),
+  t('Asc'),
+  t('Desc'),
+  t('Éléments par page'),
+  t('- Tout -'),
+  t('Décalage'),
+  t('« premier'),
+  t('‹ précédent'),
+  t('suivant ›'),
+  t('dernier »'),
+  t('<i class="fa fa-pencil-square-o"></i> [field_auteur]'),
+  t('<i class="fa fa-calendar"></i> [created]'),
+  t('<i class="fa fa-comments"></i> [comment_count]'),
+  t('.'),
+  t(' '),
+  t('1'),
+  t('@count'),
+  t('Textes d\'invités'),
+  t('PageNotes de lectures'),
+  t('Notes de lectures'),
+  t('Documents'),
+  t('Actualités'),
+  t('Revue de presse'),
+  t('<i class="fa fa-pencil-square-o"></i>'),
+  t('Bloc Articles récents'),
+  t('Articles récents'),
+  t('Bloc Dernières actualités'),
+  t('Actualités Martinique'),
+  t('<i class="fa fa-comments"></i> [comment_count] commentaires'),
+  t(','),
+  t('Dernières actualités'),
+  t('Bloc Textes de CLA'),
+  t('Chemin'),
+  t('Bloc Textes d\'invités'),
+  t('Bloc Dernières actualités slide'),
+  t('Dernières actualités slide'),
+  t('Bloc Notes de lectures'),
+  t('Bloc Revue de presse'),
+  t('Bloc Actualités france'),
+  t('Actualités France'),
+  t('Bloc Actualités Monde'),
+  t('Actualités Monde'),
+  t('Chronologie'),
+);
