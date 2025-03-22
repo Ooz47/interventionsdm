@@ -40,10 +40,10 @@ class UrlValidator extends ConstraintValidator
                 \]  # an IPv6 address
             )
             (:[0-9]+)?                              # a port (optional)
-            (?:/ (?:[\pL\pN\-._\~!$&\'()*+,;=:@]|%%[0-9A-Fa-f]{2})* )*          # a path
+            (?:/ (?:[\pL\pN\pS\pM\-._\~!$&\'()*+,;=:@]|%%[0-9A-Fa-f]{2})* )*    # a path
             (?:\? (?:[\pL\pN\-._\~!$&\'\[\]()*+,;=:@/?]|%%[0-9A-Fa-f]{2})* )?   # a query (optional)
             (?:\# (?:[\pL\pN\-._\~!$&\'()*+,;=:@/?]|%%[0-9A-Fa-f]{2})* )?       # a fragment (optional)
-        $~ixu';
+        $~ixuD';
 
     public function validate(mixed $value, Constraint $constraint): void
     {
@@ -69,7 +69,7 @@ class UrlValidator extends ConstraintValidator
         }
 
         $pattern = $constraint->relativeProtocol ? str_replace('(%s):', '(?:(%s):)?', static::PATTERN) : static::PATTERN;
-        $pattern = sprintf($pattern, implode('|', $constraint->protocols));
+        $pattern = \sprintf($pattern, implode('|', $constraint->protocols));
 
         if (!preg_match($pattern, $value)) {
             $this->context->buildViolation($constraint->message)
@@ -88,8 +88,6 @@ class UrlValidator extends ConstraintValidator
                     ->setParameter('{{ value }}', $this->formatValue($value))
                     ->setCode(Url::MISSING_TLD_ERROR)
                     ->addViolation();
-
-                return;
             }
         }
     }

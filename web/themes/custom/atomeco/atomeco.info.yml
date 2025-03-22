@@ -1,0 +1,31 @@
+name: atomeco
+type: theme
+base theme: stable9
+description: thème spécifique ATOM
+package: Custom
+core_version_requirement: ^10 || ^11
+version: 1.0.0
+screenshot: 'images/screenshot.png'
+ckeditor5-stylesheets:
+  - css/cke5-style.css
+libraries:
+  - atomeco/global
+  - core/normalize
+regions:
+  header: 'Header'
+  primary_menu: 'Primary menu'
+  # featured: 'Featured'
+  help: 'help'
+  intro: 'Intro'
+  titre: 'titre'
+  # secondary_menu: 'Secondary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  section_2: 'Section 2'
+  content: 'Content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  contenusasso: 'Contenus associés'
+  section_3: 'Section 3'
+  footer: 'Footer'
+  footer2: 'Footer 2'

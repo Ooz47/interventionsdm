@@ -7,8 +7,8 @@ namespace Composer\Autoload;
 class ComposerStaticInite49a4858f977ed5788490498f5d800d4
 {
     public static $files = array (
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '662a729f963d39afe703c9d9b7ab4a8c' => __DIR__ . '/..' . '/symfony/polyfill-php83/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
@@ -17,7 +17,7 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
-        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
+        '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         '89efb1254ef2d1c5d80096acd12c4098' => __DIR__ . '/..' . '/twig/twig/src/Resources/core.php',
         'ffecb95d45175fd40f75be8a23b34f90' => __DIR__ . '/..' . '/twig/twig/src/Resources/debug.php',
         'c7baa00073ee9c61edf148c51917cfb4' => __DIR__ . '/..' . '/twig/twig/src/Resources/escaper.php',
@@ -25,7 +25,6 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '2f69d3914119f042cca9e44442d5ce95' => __DIR__ . '/../..' . '/web/core/includes/bootstrap.inc',
-        '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         '23f09fe3194f8c2f70923f90d6702129' => __DIR__ . '/..' . '/illuminate/collections/functions.php',
         '60799491728b879e74601d83e38b2cad' => __DIR__ . '/..' . '/illuminate/collections/helpers.php',
         '47e1160838b5e5a10346ac4084b58c23' => __DIR__ . '/..' . '/laravel/prompts/src/helpers.php',
@@ -39,6 +38,10 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
             'phootwork\\lang\\' => 15,
             'phootwork\\collection\\' => 21,
         ),
+        'l' => 
+        array (
+            'lsolesen\\pel\\' => 13,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -47,7 +50,6 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
         array (
             'Symfony\\Polyfill\\Php83\\' => 23,
             'Symfony\\Polyfill\\Php81\\' => 23,
-            'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
             'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
@@ -80,6 +82,7 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
         'R' => 
         array (
             'Robo\\' => 5,
+            'Revolt\\' => 7,
         ),
         'P' => 
         array (
@@ -91,6 +94,7 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
+            'PhpTuf\\ComposerStager\\' => 22,
             'PhpParser\\' => 10,
             'Peast\\' => 6,
         ),
@@ -115,6 +119,10 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
             'GuzzleHttp\\' => 11,
             'Grasmash\\YamlCli\\' => 17,
             'Grasmash\\Expander\\' => 18,
+        ),
+        'F' => 
+        array (
+            'FontLib\\' => 8,
         ),
         'E' => 
         array (
@@ -166,6 +174,10 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
         array (
             0 => __DIR__ . '/..' . '/phootwork/collection',
         ),
+        'lsolesen\\pel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fileeye/pel/src',
+        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
@@ -177,10 +189,6 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
         'Symfony\\Polyfill\\Php81\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php81',
-        ),
-        'Symfony\\Polyfill\\Php80\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
@@ -298,6 +306,10 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
         array (
             0 => __DIR__ . '/..' . '/consolidation/robo/src',
         ),
+        'Revolt\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/revolt/event-loop/src',
+        ),
         'Psy\\' => 
         array (
             0 => __DIR__ . '/..' . '/psy/psysh/src',
@@ -330,6 +342,10 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
         'Psr\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
+        'PhpTuf\\ComposerStager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-tuf/composer-stager/src',
         ),
         'PhpParser\\' => 
         array (
@@ -381,6 +397,10 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
         array (
             0 => __DIR__ . '/..' . '/grasmash/expander/src',
         ),
+        'FontLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dompdf/php-font-lib/src/FontLib',
+        ),
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/src',
@@ -415,7 +435,7 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
         ),
         'Doctrine\\Deprecations\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations',
+            0 => __DIR__ . '/..' . '/doctrine/deprecations/src',
         ),
         'Doctrine\\Common\\Lexer\\' => 
         array (
@@ -494,7 +514,6 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
     );
 
     public static $classMap = array (
-        'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'CURLStringFile' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/CURLStringFile.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'DateError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateError.php',
@@ -535,7 +554,6 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
         'PEAR_Error' => __DIR__ . '/..' . '/pear/pear-core-minimal/src/PEAR.php',
         'PEAR_ErrorStack' => __DIR__ . '/..' . '/pear/pear-core-minimal/src/PEAR/ErrorStack.php',
         'PEAR_Exception' => __DIR__ . '/..' . '/pear/pear_exception/PEAR/Exception.php',
-        'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
         'ReturnTypeWillChange' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php',
         'SQLite3Exception' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/SQLite3Exception.php',
         'SebastianBergmann\\Diff\\Chunk' => __DIR__ . '/..' . '/sebastian/diff/src/Chunk.php',
@@ -554,10 +572,7 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
         'SebastianBergmann\\Diff\\Output\\UnifiedDiffOutputBuilder' => __DIR__ . '/..' . '/sebastian/diff/src/Output/UnifiedDiffOutputBuilder.php',
         'SebastianBergmann\\Diff\\Parser' => __DIR__ . '/..' . '/sebastian/diff/src/Parser.php',
         'SebastianBergmann\\Diff\\TimeEfficientLongestCommonSubsequenceCalculator' => __DIR__ . '/..' . '/sebastian/diff/src/TimeEfficientLongestCommonSubsequenceCalculator.php',
-        'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'System' => __DIR__ . '/..' . '/pear/pear-core-minimal/src/System.php',
-        'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
-        'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

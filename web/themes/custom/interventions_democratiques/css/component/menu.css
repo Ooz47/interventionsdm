@@ -1,0 +1,42 @@
+nav#block-interventions-democratiques-main-menu { font-family: "Oswald", Helvetica, Arial, sans-serif; font-size: 15px; text-transform: uppercase; margin: 0 0 30px 0; width: 100%; z-index: 5; position: relative; background: #1f1e1e; }
+
+nav#block-interventions-democratiques-main-menu ul { list-style: none; padding: 0; margin: 0; }
+
+nav#block-interventions-democratiques-main-menu ul li { position: relative; display: inline-block; margin: 0; margin-right: -5px; border-left: 1px solid #424242; }
+
+nav#block-interventions-democratiques-main-menu ul li a { text-align: center; text-decoration: none; padding: 10px 19px; color: #ffffff; display: block; -webkit-transition: background 0.2s ease-in; -moz-transition: background 0.2s ease-in; -o-transition: background 0.2s ease-in; transition: background 0.2s ease-in; }
+
+nav#block-interventions-democratiques-main-menu ul li:hover { background: #cf1322; -webkit-transition: background 0.4s ease-out; -moz-transition: background 0.4s ease-out; -o-transition: background 0.4s ease-out; transition: background 0.4s ease-out; }
+
+nav#block-interventions-democratiques-main-menu ul li:hover a { color: #ffffff; }
+
+nav#block-interventions-democratiques-main-menu ul li a.is-active { background: #cf1322; color: #ffffff; outline: 0; transition: none; }
+
+nav#block-interventions-democratiques-main-menu ul li.active-trail, nav#block-interventions-democratiques-main-menu ul li.menu__item--active-trail { background: #cf1322; outline: 0; transition: none; }
+
+nav#block-interventions-democratiques-main-menu ul li.active-trail a, nav#block-interventions-democratiques-main-menu ul li.menu__item--active-trail a { color: #ffffff; }
+
+nav#block-interventions-democratiques-main-menu ul li:hover > ul { display: block; opacity: 1; visibility: visible; }
+
+nav#block-interventions-democratiques-main-menu ul li:last-child { display: none; }
+
+.menu-burger { display: none; cursor: pointer; padding: 10px; background: #cf1322; color: #fff; text-align: center; }
+
+.menu-burger:hover { background: #2f2f2f; }
+
+@media (max-width: 768px) { nav#block-interventions-democratiques-main-menu { margin-top: 0; }
+  nav#block-interventions-democratiques-main-menu ul { display: none; }
+  nav#block-interventions-democratiques-main-menu ul.menu-open { display: flex; flex-direction: column; width: 100%; }
+  nav#block-interventions-democratiques-main-menu ul.menu-open li { display: block; width: 100%; border-top: 1px solid #fff; border-left: 0px solid #fff; }
+  .menu-burger { display: block; } }
+
+/*Menu utilisateur*/
+#block-interventions-democratiques-account-menu > ul { display: flex; gap: 1rem; list-style: none; padding: 0; margin: 0; }
+
+#block-interventions-democratiques-account-menu > ul li a { margin-left: 5px; text-decoration: none; color: #2f2f2f; line-height: 6em; }
+
+#block-interventions-democratiques-account-menu > ul li::before { font: normal normal normal 14px / 1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; }
+
+#block-interventions-democratiques-account-menu > ul li:first-child::before { content: "\f007"; }
+
+#block-interventions-democratiques-account-menu > ul li:last-child::before { content: "\f052"; }

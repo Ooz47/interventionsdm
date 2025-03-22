@@ -47,7 +47,7 @@ class RecipeRunnerTest extends KernelTestBase {
     // Test the state after applying the recipe.
     $this->assertTrue($this->container->get('module_handler')->moduleExists('views'), 'The views module is installed');
     $this->assertTrue($this->container->get('module_handler')->moduleExists('node'), 'The node module is installed');
-    $this->assertTrue($this->container->get('theme_handler')->themeExists('test_basetheme'), 'The test_basetheme theme is installed');
+    $this->assertTrue($this->container->get('theme_handler')->themeExists('test_base_theme'), 'The test_base_theme theme is installed');
     $this->assertTrue($this->container->get('theme_handler')->themeExists('test_subtheme'), 'The test_subtheme theme is installed');
     $this->assertTrue($this->container->get('theme_handler')->themeExists('test_subsubtheme'), 'The test_subsubtheme theme is installed');
     $this->assertTrue($this->container->get('config.storage')->exists('node.settings'), 'The node.settings configuration has been created');
@@ -207,6 +207,23 @@ install:
   - config_test
 config:
   actions:
+    config_test.system:
+      setFoo: 'Bar'
+YAML;
+
+    $recipe = $this->createRecipe($recipe_data);
+    $this->expectException(PluginNotFoundException::class);
+    $this->expectExceptionMessage('The "setFoo" plugin does not exist.');
+    RecipeRunner::processRecipe($recipe);
+  }
+
+  public function testInvalidConfigActionAppliedOnConfigEntity() :void {
+    $recipe_data = <<<YAML
+name: Invalid config action
+install:
+  - config_test
+config:
+  actions:
     config_test.dynamic.recipe:
       createIfNotExists:
         label: 'Created by recipe'
@@ -215,7 +232,7 @@ YAML;
 
     $recipe = $this->createRecipe($recipe_data);
     $this->expectException(PluginNotFoundException::class);
-    $this->expectExceptionMessage('The "setBody" plugin does not exist.');
+    $this->expectExceptionMessage('The "config_test" entity does not support the "setBody" config action.');
     RecipeRunner::processRecipe($recipe);
   }
 

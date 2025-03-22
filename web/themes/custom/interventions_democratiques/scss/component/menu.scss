@@ -1,0 +1,152 @@
+@import "../utilities";
+
+$transition-duration: 0.3s;
+$transition-timing-function: ease-in-out;
+
+//Menu principal
+nav#block-interventions-democratiques-main-menu {
+    // font-family: 'Source Sans Pro', sans-serif;
+    font-family: "Oswald", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin: 0 0 30px 0;
+    // text-align: center;
+    width: 100%;
+    z-index: 5;
+    position: relative;
+    background: $noir;
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            // background: $grismenu;
+            margin-right: -5px;
+            border-left: 1px solid #424242;
+
+            a {
+                text-align: center;
+                text-decoration: none;
+                padding: 10px 19px;
+                color: $blanc;
+                display: block;
+                @include transition(background, 0.2s, ease-in);
+            }
+
+            &:hover {
+                background: $rougeprimaire;
+                @include transition(background, 0.4s, ease-out);
+
+                a {
+                    color: $blanc;
+                }
+            }
+
+            a.is-active {
+                background: $rougeprimaire;
+                color: $blanc;
+                outline: 0;
+                transition: none;
+            }
+
+            &.active-trail,
+            &.menu__item--active-trail {
+                background: $rougeprimaire;
+                outline: 0;
+                transition: none;
+
+                a {
+                    color: $blanc;
+                }
+            }
+
+            &:hover > ul {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+}
+
+// Styles pour le menu burger
+.menu-burger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    background: $rougeprimaire;
+    color: #fff;
+    text-align: center;
+
+    &:hover {
+        background: $noirpolice;
+    }
+}
+
+@media (max-width: 768px) {
+    nav#block-interventions-democratiques-main-menu {
+        margin-top: 0;
+
+        ul {
+            display: none;
+
+            &.menu-open {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                li {
+                    display: block;
+                    width: 100%;
+                    border-top: 1px solid #fff;
+                    border-left: 0px solid #fff;
+                }
+            }
+        }
+    }
+
+    .menu-burger {
+        display: block;
+    }
+}
+
+/*Menu utilisateur*/
+#block-interventions-democratiques-account-menu {
+    > ul {
+        display: flex;
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            a {
+
+                margin-left: 5px;
+    text-decoration: none;
+    color: $noirpolice;
+    line-height: 6em;
+            }
+            &::before {
+                font: normal normal normal 14px / 1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+            
+            }
+            &:first-child::before {
+                content: "\f007";
+            }
+
+            &:last-child::before {
+                content: "\f052";
+            }
+        }
+    }
+}

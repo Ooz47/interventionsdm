@@ -29,6 +29,7 @@
         "drupal/eu_cookie_compliance": "^1.25",
         "drupal/fontawesome": "^3.0",
         "drupal/honeypot": "^2.2",
+        "drupal/image_effects": "^4.0",
         "drupal/libraries": "^4.0",
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_tools": "^6.0",

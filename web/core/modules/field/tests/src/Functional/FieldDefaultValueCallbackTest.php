@@ -16,9 +16,7 @@ use Drupal\Tests\BrowserTestBase;
 class FieldDefaultValueCallbackTest extends BrowserTestBase {
 
   /**
-   * Modules to enable.
-   *
-   * @var array
+   * {@inheritdoc}
    */
   protected static $modules = ['node', 'field_test', 'field_ui'];
 
@@ -58,7 +56,6 @@ class FieldDefaultValueCallbackTest extends BrowserTestBase {
 
   public function testDefaultValueCallbackForm(): void {
     // Create a field and storage for checking.
-    /** @var \Drupal\field\Entity\FieldStorageConfig $field_storage */
     FieldStorageConfig::create([
       'field_name' => $this->fieldName,
       'entity_type' => 'node',

@@ -15,9 +15,7 @@ use Drupal\Tests\BrowserTestBase;
 class ElementsLabelsTest extends BrowserTestBase {
 
   /**
-   * Modules to enable.
-   *
-   * @var array
+   * {@inheritdoc}
    */
   protected static $modules = ['form_test'];
 
@@ -162,7 +160,7 @@ class ElementsLabelsTest extends BrowserTestBase {
   /**
    * Return a form with element with not all properties defined.
    */
-  protected function getFormWithLimitedProperties() {
+  protected function getFormWithLimitedProperties(): array {
     $form = [];
 
     $form['fieldset'] = [
