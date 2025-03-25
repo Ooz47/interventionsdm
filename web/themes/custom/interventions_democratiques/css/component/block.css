@@ -1,0 +1,5 @@
+.views-element-container h2 { font-size: 14px; font-size: .875rem; font-weight: 400; color: #fff; padding: 10px 0; margin-bottom: 0; text-transform: uppercase; overflow: hidden; }
+
+.views-element-container h2 span { padding: 10px; background: #cf1322; }
+
+.views-element-container > div:last-child { padding: 20px; border: 3px solid #efefef; }

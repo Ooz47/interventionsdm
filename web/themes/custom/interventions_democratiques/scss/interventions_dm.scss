@@ -84,3 +84,79 @@
 // main {
 //   padding-top: 1.5em;
 // }
+
+
+/*VUES CONTENUS*/
+
+.views-element-container  {
+  .views-field-title 
+  {
+    margin-bottom:10px;
+    a{
+    display: block;
+    text-decoration: none;
+    color: $noir;
+    line-height: 1.3;
+    font-weight: 400;
+    font-family: 'Oswald', Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    @include transition(color, 0.2s, ease-out);
+  &:hover {
+    color: $rougeprimaire;
+  }
+    }
+  }
+  .views-field-created, .views-field-field-thematique, .views-field-field-region, .views-field-field-auteur {
+    display: inline-block;
+    font-size: 12px;
+    font-size: .75rem;
+    margin-bottom: 5px;
+    text-transform: none;
+    color: $grisfonce;
+  }
+
+  .views-field-field-region,.views-field-field-thematique, .views-field-comment-count {
+    margin-right: 5px;
+    a{
+      color: $rougeprimaire;
+    font-weight: 700;
+    line-height: 1.5em;
+    padding: 1px 4px;
+    min-height: 18px;
+    /*color: #fff;*/
+    text-align: center;
+      background: $rougepale;
+    text-decoration:none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    
+    &:hover{
+    color: $blanc;
+     background: $rougeprimaire;
+   @include transition(background, 0.2s, ease-out);/**/
+  }
+  }
+  }
+
+  .views-field-comment-count{
+
+    float: right;
+       font-size: 12px;
+        font-size: .75rem;
+        a{
+          color: $grisfonce;
+               background: $grisclair;
+              
+        &:hover{
+        // color: $blanc;
+         background: $grisfonce;
+       @include transition(background, 0.2s, ease-out);/**/
+      }
+      }
+    }
+
+    .region-sidebar-second .block .view-content .views-row .views-field-body {
+      margin: 10px 0;
+      // clear: both;
+  }
+} 

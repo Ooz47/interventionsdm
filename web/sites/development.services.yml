@@ -21,4 +21,6 @@ parameters:
 services:
   cache.backend.null:
     class: Drupal\Core\Cache\NullBackendFactory
-
+  logger.channel.default:
+    class: Drupal\Core\Logger\LoggerChannel
+    arguments: ['@logger.factory']
