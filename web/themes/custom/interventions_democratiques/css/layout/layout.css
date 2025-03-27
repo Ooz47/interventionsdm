@@ -1,9 +1,13 @@
 .layout-container { margin-left: auto; margin-right: auto; max-width: 1240px; padding: 0 40px 40px; background: #ffffff; }
 
+.basdepage, .section_3 { margin-left: auto; margin-right: auto; max-width: 1240px; padding: 0 40px 0; }
+
 .text-center { text-align: center; }
 
-main > div { display: flex; margin-bottom: 3em; gap: 3rem; }
+main > div { display: flex; margin-bottom: 3em; gap: 40px; }
 
 main > div .layout-content { flex-basis: 70%; }
 
-main > div aside { flex-basis: 30%; margin-left: 2em; }
+main > div aside { flex-basis: 30%; }
+
+textarea { width: 100%; }

@@ -1,42 +1,183 @@
+@charset "UTF-8";
 /* open-sans-regular - latin */
-@font-face { font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */ font-family: 'Open Sans'; font-style: normal; font-weight: 400; src: url("../fonts/Open_Sans/open-sans-v40-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ }
+@font-face { font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */ font-family: "Open Sans"; font-style: normal; font-weight: 400; src: url("../fonts/Open_Sans/open-sans-v40-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ }
 
 /* open-sans-italic - latin */
-@font-face { font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */ font-family: 'Open Sans'; font-style: italic; font-weight: 400; src: url("../fonts/Open_Sans/open-sans-v40-latin-italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ }
+@font-face { font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */ font-family: "Open Sans"; font-style: italic; font-weight: 400; src: url("../fonts/Open_Sans/open-sans-v40-latin-italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ }
 
 /* open-sans-600 - latin */
-@font-face { font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */ font-family: 'Open Sans'; font-style: normal; font-weight: 600; src: url("../fonts/Open_Sans/open-sans-v40-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ }
+@font-face { font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */ font-family: "Open Sans"; font-style: normal; font-weight: 600; src: url("../fonts/Open_Sans/open-sans-v40-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ }
 
 /* open-sans-600italic - latin */
-@font-face { font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */ font-family: 'Open Sans'; font-style: italic; font-weight: 600; src: url("../fonts/Open_Sans/open-sans-v40-latin-600italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ }
+@font-face { font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */ font-family: "Open Sans"; font-style: italic; font-weight: 600; src: url("../fonts/Open_Sans/open-sans-v40-latin-600italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ }
 
 /* oswald-regular - latin */
-@font-face { font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */ font-family: 'Oswald'; font-style: normal; font-weight: 400; src: url("../fonts/Oswald/oswald-v53-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ }
+@font-face { font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */ font-family: "Oswald"; font-style: normal; font-weight: 400; src: url("../fonts/Oswald/oswald-v53-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ }
 
 /* oswald-600 - latin */
-@font-face { font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */ font-family: 'Oswald'; font-style: normal; font-weight: 600; src: url("../fonts/Oswald/oswald-v53-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ }
+@font-face { font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */ font-family: "Oswald"; font-style: normal; font-weight: 600; src: url("../fonts/Oswald/oswald-v53-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */ }
 
 @font-face { font-family: "FontAwesome"; src: url("../fonts/webfonts/fa-solid-900.eot"); src: url("../fonts/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/webfonts/fa-solid-900.woff") format("woff"), url("../fonts/webfonts/fa-solid-900.ttf") format("truetype"), url("../fonts/webfonts/fa-solid-900.svg#FontAwesome5Free-Regular") format("svg"); font-weight: normal; font-style: normal; font-display: swap; }
 
 @font-face { font-family: "FontAwesomeRegular"; src: url("../fonts/webfonts/fa-regular-400.eot"); src: url("../fonts/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/webfonts/fa-regular-400.woff") format("woff"), url("../fonts/webfonts/fa-regular-400.ttf") format("truetype"), url("../fonts/webfonts/fa-regular-400.svg#FontAwesome5Free-Regular") format("svg"); font-weight: normal; font-style: normal; font-display: swap; }
 
 /*VUES CONTENUS*/
-.views-element-container .views-field-title a { display: block; text-decoration: none; color: #1f1e1e; line-height: 1.3; font-weight: 400; font-family: 'Oswald', Helvetica, Arial, sans-serif; font-size: 1rem; -webkit-transition: color 0.2s ease-out; -moz-transition: color 0.2s ease-out; -o-transition: color 0.2s ease-out; transition: color 0.2s ease-out; }
+.views-element-container .views-row { margin-bottom: 20px; padding-bottom: 15px; border: 0; border-bottom: 1px dotted #efefef; min-height: 180px; display: inline-block; width: 100%; }
 
-.views-element-container .views-field-title a:hover { color: #cf1322; }
+.views-element-container .views-row .views-field-title { margin-bottom: 10px; }
 
-.views-element-container .views-field-created, .views-element-container .views-field-field-thematique, .views-element-container .views-field-field-region, .views-element-container .views-field-field-auteur { display: inline-block; font-size: 12px; font-size: .75rem; margin-bottom: 5px; text-transform: none; color: #424242; }
+.views-element-container .views-row .views-field-title a { display: block; text-decoration: none; color: #1f1e1e; line-height: 1.3; font-weight: 400; font-family: "Oswald", Helvetica, Arial, sans-serif; font-size: 1rem; -webkit-transition: color 0.2s ease-out; -moz-transition: color 0.2s ease-out; -o-transition: color 0.2s ease-out; transition: color 0.2s ease-out; }
 
-.views-element-container .views-field-field-region, .views-element-container .views-field-field-thematique, .views-element-container .views-field-comment-count { margin-right: 5px; }
+.views-element-container .views-row .views-field-title a:hover { color: #cf1322; }
 
-.views-element-container .views-field-field-region a, .views-element-container .views-field-field-thematique a, .views-element-container .views-field-comment-count a { color: #cf1322; font-weight: 700; line-height: 1.5em; padding: 1px 4px; min-height: 18px; /*color: #fff;*/ text-align: center; background: #f5d0d3; text-decoration: none; border-radius: 5px; letter-spacing: 1px; }
+.views-element-container .views-row .views-field-created, .views-element-container .views-row .views-field-field-thematique, .views-element-container .views-row .views-field-field-region, .views-element-container .views-row .views-field-field-auteur, .views-element-container .views-row .views-field-type { display: inline-block; font-size: 12px; font-size: 0.75rem; margin-bottom: 5px; text-transform: none; color: #424242; }
 
-.views-element-container .views-field-field-region a:hover, .views-element-container .views-field-field-thematique a:hover, .views-element-container .views-field-comment-count a:hover { color: #ffffff; background: #cf1322; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; /**/ }
+.views-element-container .views-row .views-field-created, .views-element-container .views-row .views-field-field-auteur { margin-bottom: 0; }
 
-.views-element-container .views-field-comment-count { float: right; font-size: 12px; font-size: .75rem; }
+.views-element-container .views-row .views-field-field-auteur { margin-right: 10px; }
 
-.views-element-container .views-field-comment-count a { color: #424242; background: #efefef; }
+.views-element-container .views-row .views-field-field-region, .views-element-container .views-row .views-field-field-thematique, .views-element-container .views-row .views-field-comment-count, .views-element-container .views-row .views-field-type { margin-right: 5px; }
 
-.views-element-container .views-field-comment-count a:hover { background: #424242; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; /**/ }
+.views-element-container .views-row .views-field-field-region a, .views-element-container .views-row .views-field-field-thematique a, .views-element-container .views-row .views-field-comment-count a, .views-element-container .views-row .views-field-type a { color: #cf1322; font-weight: 700; line-height: 1.5em; padding: 1px 4px; min-height: 18px; /*color: #fff;*/ text-align: center; background: #f5d0d3; text-decoration: none; border-radius: 5px; letter-spacing: 1px; }
 
-.views-element-container .region-sidebar-second .block .view-content .views-row .views-field-body { margin: 10px 0; }
+.views-element-container .views-row .views-field-field-region a:hover, .views-element-container .views-row .views-field-field-thematique a:hover, .views-element-container .views-row .views-field-comment-count a:hover, .views-element-container .views-row .views-field-type a:hover { color: #ffffff; background: #cf1322; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; /**/ }
+
+.views-element-container .views-row .views-field-type { font-size: 12px; font-size: .75rem; margin-bottom: 5px; text-transform: none; color: #ffffff; font-weight: 700; line-height: 1.5em; padding: 1px 4px; min-height: 18px; /*color: #fff;*/ text-align: center; background-color: #cf1322; text-decoration: none; border-radius: 5px; letter-spacing: 1px; }
+
+.views-element-container .views-row .views-field-field-media-image img, .views-element-container .views-row .views-field-field-image-1 img { border: 1px solid #efefef; padding: 3px; }
+
+.views-element-container .views-row .views-field-body { margin: 10px 0; }
+
+.views-element-container .views-row .views-field-comment-count { float: right; font-size: 12px; font-size: 0.75rem; }
+
+.views-element-container .views-row .views-field-comment-count a { color: #424242; background: #efefef; }
+
+.views-element-container .views-row .views-field-comment-count a:hover { background: #424242; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; /**/ }
+
+.section_actualites { display: flex; justify-content: space-between; }
+
+.section_actualites .views-element-container { width: 47%; }
+
+/* ACTUS MARTINIQUE**/
+#block-interventions-democratiques-views-block-contenus-block-2 .views-field-field-media-image, .textes-cla .views-field-field-media-image, .textes-invites .views-field-field-media-image, .notes-lecture .views-field-field-media-image, .vue-documents .views-field-field-media-image, .vue-actualites .views-field-field-media-image, .vue-revue-presse .views-field-field-media-image, .vue-chronologie .views-field-field-media-image, .vue-taxonomy-term .views-field-field-media-image { float: left; max-width: 260px; margin: 0 20px 10px 0; }
+
+/*Contenu page complete*/
+.page-node .content article { margin-bottom: 25px; }
+
+.page-node .content .image-media { float: right; margin-left: 20px; border: 1px solid #efefef; padding: 3px; }
+
+.page-node .content .field-thematique, .page-node .content .field-region, .page-node .content .field-auteur { font-size: 12px; font-size: 0.75rem; margin-bottom: 5px; text-transform: none; color: #424242; }
+
+.page-node .content .field-thematique a, .page-node .content .field-region a, .page-node .content .field-auteur a { color: #cf1322; font-weight: 700; line-height: 1.5em; padding: 1px 4px; min-height: 18px; /*color: #fff;*/ text-align: center; background: #f5d0d3; text-decoration: none; border-radius: 5px; letter-spacing: 1px; }
+
+.page-node .content .field-thematique a:hover, .page-node .content .field-region a:hover, .page-node .content .field-auteur a:hover { color: #ffffff; background: #cf1322; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; /**/ }
+
+.page-node .content .field-region { clear: left; }
+
+.page-node .content .field-thematique, .page-node .content .field-region { display: inline-block; }
+
+.page-node .content .field-thematique div, .page-node .content .field-region div { /* display: block; */ display: inline-block; margin-right: 5px; }
+
+.page-node .content .field-media-document { display: table; padding: 10px 20px; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; color: #444; background: #efefef; text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2); text-decoration: none; font-size: 14px; line-height: 30px; font-weight: 400; cursor: pointer; padding: 5px 5px; -webkit-transition: background 0.3s ease-out; -moz-transition: background 0.3s ease-out; -o-transition: background 0.3s ease-out; transition: background 0.3s ease-out; margin: 25px auto; text-align: center; max-width: 315px; }
+
+.page-node .content .field-media-document a { text-decoration: none; font-size: 13px; color: #cf1322; line-height: 14px; }
+
+.page-node .content .field-media-document:hover { background: #cf1322; -webkit-transition: background 0.3s ease-out; -moz-transition: background 0.3s ease-out; -o-transition: background 0.3s ease-out; transition: background 0.3s ease-out; color: #ffffff; }
+
+.page-node .content .field-media-document:hover a { color: #ffffff; }
+
+.page-node .content .field-media-document:before { content: "Télécharger le fichier:"; }
+
+.page-node .content .field-media-document .field-item { line-height: 18px; }
+
+.page-node .content .field-media-document .field-item .file-icon { display: none; }
+
+.page-node .content .field-media-document .field-item a { /*&:after{ display: block; padding-top: 5px; font: normal normal normal 24px/1 FontAwesome; text-rendering: auto; -webkit-font-smoothing: antialiased; content: "\f019"; }*/ }
+
+.page-node .content .comment-add a { margin-top: 15px; }
+
+.page-node .content .comment_forbidden { clear: both; display: block; padding-top: 15px; }
+
+.page-node .content .field-comments { clear: both; /* padding: 20px 20px 10px; */ padding: 1.25rem 1.25rem 0.625rem; margin-bottom: 30px; margin-bottom: 1.875rem; background: #efefef; }
+
+.page-node .content .field-comments .comment { padding: 20px 20px 10px 20px; margin-bottom: 20px; border-bottom: 2px solid #cf1322; background: #fff; }
+
+.page-node .content .field-comments .comment p { margin: 0; }
+
+.page-node .content .field-comments .comment.comment-unpublished { background: #e8e8e8; }
+
+.page-node .content .field-comments .comment.comment-unpublished .unpublished { clear: both; font-size: 46px; }
+
+.page-node .content .field-comments .comment .submitted { font-weight: bold; margin-bottom: 20px; margin-bottom: 1.25rem; float: left; }
+
+.page-node .content .field-comments .comment .comment-actions { float: right; }
+
+.page-node .content .field-comments .comment .comment-actions a { font-size: 0.8em; color: #424242; font-weight: 400; line-height: 1.5em; padding: 1px 4px; min-height: 18px; /* color: #fff; */ text-align: center; background: #efefef; text-decoration: none; border-radius: 5px; letter-spacing: 1px; }
+
+.page-node .content .field-comments .comment .comment-actions a:hover { color: #ffffff; background: #cf1322; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; /**/ }
+
+.page-node .content .field-comments .comment.last { margin-bottom: 30px; }
+
+.page-node .content .field-comments .comment .field-name-comment-body { clear: both; }
+
+.page-node .content .field-comments .indented .comment { background: #fcfcfc; }
+
+.page-node .content .field-comments a.username { color: #1f1e1e; text-decoration: none; }
+
+.addtoany_list { display: block; float: right; line-height: 16px; margin: 0px 0 10px; }
+
+/*ABECEDAIRE*/
+.vue-abecedaire { border-top: 0px solid #efefef !important; }
+
+.vue-abecedaire .views-element-container .views-summary-unformatted { /* padding: 0 4px; */ width: 20px; border: 1px solid #d1d1d1; margin: 0 3px; border-radius: 6px; text-align: center; color: #d1d1d1; display: block; float: left; }
+
+.vue-abecedaire .views-element-container .views-summary-unformatted a { font-weight: bold; text-decoration: none; color: #424242; display: block; }
+
+.vue-abecedaire .views-element-container .views-summary-unformatted a:hover, .vue-abecedaire .views-element-container .views-summary-unformatted a.is-active { color: #cf1322; }
+
+.vue-abecedaire table { margin-top: 1.5em; margin-bottom: 1.5em; }
+
+.vue-abecedaire table tbody tr:nth-child(odd) { background-color: #efefef; }
+
+.vue-abecedaire table .views-field-title { padding: 0 10px; }
+
+.vue-abecedaire table .views-field-title a { text-decoration: none; font-weight: bold; color: #1f1e1e; font-size: 0.9rem !important; }
+
+.vue-abecedaire table .views-field-body { padding: 0 10px; }
+
+nav.pager ul.pager__items { display: flex; list-style-type: none; justify-content: space-evenly; }
+
+nav.pager ul.pager__items .pager__item { display: inline-block; margin: 0 5px; }
+
+nav.pager ul.pager__items .pager__item a { text-decoration: none; color: #2f2f2f; font-weight: bold; padding: 5px 10px; border: 1px solid #efefef; border-radius: 5px; }
+
+nav.pager ul.pager__items .pager__item a:hover, nav.pager ul.pager__items .pager__item a.is-active { background: #cf1322; color: #ffffff; }
+
+nav.pager ul.pager__items .pager__item.is-active a { text-decoration: none; color: #ffffff; font-weight: bold; padding: 5px 10px; border: 1px solid #cf1322; border-radius: 5px; background: #cf1322; }
+
+.basdepage { background: #2f2f2f; }
+
+.basdepage nav { text-align: center; }
+
+.basdepage nav > ul { list-style-type: none; margin: 0; padding: 0; display: flex; justify-content: space-evenly; }
+
+.basdepage nav > ul li { padding: 20px 0; color: #eeeff1; }
+
+.basdepage nav > ul li a { text-decoration: none; color: #eeeff1; }
+
+footer { background: #424242; max-width: 100%; color: #eeeff1; text-align: center; }
+
+footer p { margin: 0; line-height: 2.5em; }
+
+footer a { color: #eeeff1; }
+
+#search-block-form { display: flex; justify-content: flex-end; }
+
+#search-block-form input[type="submit"] { margin-left: 5px; }
+
+input[type="submit"], .comment-add a, .comment_forbidden a { color: #fff; padding: 3px 8px; cursor: pointer; background: #cf1322; display: inline-block; border: 0; -webkit-appearance: none; -webkit-border-radius: 0; border-radius: 0; text-decoration: none; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; }
+
+input[type="submit"]:hover, .comment-add a:hover, .comment_forbidden a:hover { background: #2f2f2f; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; color: #fff; border: 0; padding: 3px 8px; }
+
+/**PAGE RECHERCHE */
+.search-results .title a { color: #cf1322; }

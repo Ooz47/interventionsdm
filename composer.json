@@ -27,6 +27,7 @@
         "drupal/devel": "^5.3",
         "drupal/entity": "^1.6",
         "drupal/eu_cookie_compliance": "^1.25",
+        "drupal/field_formatter_class": "^1.8",
         "drupal/fontawesome": "^3.0",
         "drupal/honeypot": "^2.2",
         "drupal/image_effects": "^4.0",
@@ -122,6 +123,7 @@
         "drush": "vendor/bin/drush"
       },
     "require-dev": {
-        "drush/drush": "13"
+        "drush/drush": "13",
+        "kint-php/kint": "^6.0"
     }
 }

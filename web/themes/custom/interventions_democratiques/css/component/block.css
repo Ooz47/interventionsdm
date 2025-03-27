@@ -2,4 +2,8 @@
 
 .views-element-container h2 span { padding: 10px; background: #cf1322; }
 
-.views-element-container > div:last-child { padding: 20px; border: 3px solid #efefef; }
+aside .views-element-container > div:last-child { padding: 20px; border: 3px solid #efefef; }
+
+.layout-content .views-element-container > div:last-child { padding: 20px 0; border-top: 3px solid #efefef; }
+
+.layout-content .views-element-container > div:last-child .views-field-title a { font-size: 1.5rem; }

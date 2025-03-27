@@ -1,5 +1,12 @@
 <?php
 
+
+// Charge des helpers de dev si le fichier existe.
+$dev_helpers = DRUPAL_ROOT . '/sites/default/dev.helpers.php';
+if (file_exists($dev_helpers)) {
+  require_once $dev_helpers;
+}
+
 // phpcs:ignoreFile
 
 /**
@@ -115,7 +122,7 @@ $config['system.performance']['js']['preprocess'] = FALSE;
  * using these parameters in a request to rebuild.php.
  */
 $settings['rebuild_access'] = TRUE;
-
+$config['system.performance']['cache']['page']['max_age'] = 0;
 /**
  * Skip file system permissions hardening.
  *
@@ -151,3 +158,9 @@ $settings['skip_permissions_hardening'] = TRUE;
  * the language or field module.
  */
 # $settings['config_exclude_modules'] = ['devel', 'stage_file_proxy'];
+
+$settings['automated_cron']['interval'] = 0;
+if (class_exists('Kint')) {
+    // Change the maximum depth to prevent out-of-memory errors.
+    \Kint::$depth_limit= 4;
+  }

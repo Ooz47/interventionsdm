@@ -17,9 +17,28 @@
         }
 
     }
-   > div:last-child {
+
+}
+aside {
+.views-element-container {
+    > div:last-child {
         padding: 20px;
         border: 3px solid $grisclair;
         // border-top: none;
     }
 }
+}
+
+.layout-content {
+    .views-element-container {
+        > div:last-child {
+            padding: 20px 0;
+            border-top: 3px solid $grisclair;
+            // border-top: none;
+
+           .views-field-title a {
+font-size: 1.5rem;
+            }
+        }
+    }
+    }
