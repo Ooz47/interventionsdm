@@ -1,0 +1,139 @@
+# All libraries supported by Splide module.
+splide:
+  remote: https://github.com/Splidejs/splide
+  version: 4.x
+  license:
+    name: MIT
+    url: https://github.com/Splidejs/splide/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/splide/dist/js/splide.min.js: { weight: -3, minified: true }
+  css:
+    base:
+      /libraries/splide/dist/css/splide-core.min.css: {}
+
+# Prioritize github, then SplideSkinManager:libraryInfoAlter() for packagist.
+autoscroll:
+  remote: https://github.com/Splidejs/splide-extension-auto-scroll
+  version: 0.x
+  license:
+    name: MIT
+    url: https://github.com/Splidejs/splide-extension-auto-scroll/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/splide-extension-auto-scroll/dist/js/splide-extension-auto-scroll.min.js: { weight: -2.9, minified: true }
+  dependencies:
+    - splide/splide
+
+intersection:
+  remote: https://github.com/Splidejs/splide-extension-intersection
+  version: 0.x
+  license:
+    name: MIT
+    url: https://github.com/Splidejs/splide-extension-intersection/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/splide-extension-intersection/dist/js/splide-extension-intersection.min.js: { weight: -2.9, minified: true }
+  dependencies:
+    - splide/splide
+
+base:
+  version: VERSION
+  js:
+    js/splide.base.min.js: { weight: -2, minified: true }
+  css:
+    base:
+      css/splide.base.css: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    # @todo min D9.2 - core/once
+    - blazy/dblazy
+    - blazy/loading
+    - splide/splide
+
+load:
+  version: VERSION
+  js:
+    js/splide.load.min.js: { weight: -0.003, minified: true }
+  dependencies:
+    - splide/base
+
+vanilla:
+  version: VERSION
+  js:
+    js/splide.vanilla.min.js: { weight: -0.003, minified: true }
+  dependencies:
+    - splide/base
+
+nav:
+  version: VERSION
+  css:
+    component:
+      css/components/splide.navigation.css: {}
+  js:
+    js/splide.nav.min.js: { weight: -0.002, minified: true }
+  dependencies:
+    - splide/base
+
+theme:
+  version: VERSION
+  css:
+    layout:
+      css/layout/splide.module.css: {}
+    # @todo load caption conditionally instead.
+    component:
+      css/components/splide.caption.css: {}
+    theme:
+      css/theme/splide.theme.css: {}
+  dependencies:
+    - splide/base
+
+pagination:
+  version: VERSION
+  js:
+    js/components/splide.pagination.min.js: { weight: -0.03, minified: true }
+  dependencies:
+    - splide/theme
+
+pagination.hover:
+  version: VERSION
+  css:
+    component:
+      css/components/splide.pagination--hover.css: {}
+  dependencies:
+    - splide/pagination
+
+pagination.grid:
+  version: VERSION
+  css:
+    component:
+      css/components/splide.pagination--grid.css: {}
+  dependencies:
+    - splide/pagination
+
+pagination.tab:
+  version: VERSION
+  css:
+    component:
+      css/components/splide.pagination--tab.css: {}
+  js:
+    js/components/splide.pagination.tab.min.js: { weight: -0.03, minified: true }
+  dependencies:
+    - splide/base
+
+arrow.down:
+  version: VERSION
+  css:
+    component:
+      css/components/splide.arrows--down.css: {}
+  dependencies:
+    - splide/theme
+
+autoplay:
+  version: VERSION
+  css:
+    component:
+      css/components/splide.autoplay.css: {}
+  dependencies:
+    - splide/theme

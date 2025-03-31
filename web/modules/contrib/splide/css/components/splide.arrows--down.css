@@ -1,0 +1,86 @@
+/**
+ * @file
+ */
+
+.splide.is-arrowed--down > .splide__arrows {
+  position: absolute;
+  top: auto;
+  bottom: 32px;
+  left: 50%;
+  width: 220px;
+  height: 64px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.splide__arrow--down {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  border: 0;
+  border-radius: 50%;
+  background: #ff6d2c;
+  font-size: 0;
+}
+
+.is-mounted .splide__arrow--down {
+  display: block;
+}
+
+.splide__arrow--down:active,
+.splide__arrow--down:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.splide__arrow--down::before,
+.splide__arrow--down::after {
+  pointer-events: none;
+}
+
+/* Pure CSS arrow down, override by icon font accordingly */
+.splide__arrow--down:hover {
+  background: #37465b;
+}
+
+.splide__arrow--down::before,
+.splide__arrow--down::after {
+  position: absolute;
+  top: 50%;
+  right: 28px;
+  display: block;
+  width: 0;
+  height: 16px;
+  margin-top: -6px;
+  content: "";
+  -ms-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  color: #fff;
+  border-right: 3px solid;
+}
+
+.splide__arrow--down::after {
+  right: 18px;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.splide__arrow--down:hover::before,
+.splide__arrow--down:hover::after {
+  color: #fff;
+}
+
+@media (min-width: 64em) {
+  .is-arrowed--down .slide--caption--bottom .slide__caption {
+    padding-bottom: 80px;
+  }
+}

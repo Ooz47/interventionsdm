@@ -1,0 +1,76 @@
+/**
+ * @file
+ * Detailed stylings are all yours, get yourself dirty.
+ */
+.splide--skin--split .slide__caption {
+  top: 0;
+}
+
+@media (min-width: 64em) {
+  .slide--caption--split-left .slide__caption,
+  .slide--caption--split-right .slide__caption {
+    position: relative;
+    top: 10%;
+    left: 0;
+    width: 42%;
+    padding: 20px;
+  }
+
+  .splide--skin--split .slide--caption--split-left .slide__media,
+  .splide--skin--split .slide--caption--split-zebra:nth-child(odd) .slide__media {
+    float: left;
+    width: 48%;
+  }
+
+  .splide--skin--split .slide--caption--split-right .slide__media,
+  .splide--skin--split .slide--caption--split-zebra:nth-child(even) .slide__media {
+    float: right;
+    width: 48%;
+  }
+
+  .splide--skin--split .slide--caption--split-left .slide__caption,
+  .splide--skin--split .slide--caption--split-zebra:nth-child(odd) .slide__caption {
+    width: auto;
+    margin-left: 52%;
+    text-align: right;
+  }
+
+  .splide--skin--split .slide--caption--split-right .slide__caption,
+  .splide--skin--split .slide--caption--split-zebra:nth-child(even) .slide__caption {
+    width: auto;
+    margin-right: 52%;
+    text-align: left;
+  }
+
+  .splide--skin--split .slide--caption--split-left .slide__media,
+  .splide--skin--split .slide--caption--split-zebra:nth-child(odd) .slide__media {
+    float: left;
+    width: 48%;
+  }
+
+  .splide--skin--split .slide--caption--split-right .slide__media,
+  .splide--skin--split .slide--caption--split-zebra:nth-child(even) .slide__media {
+    float: right;
+    width: 48%;
+  }
+
+  .splide--skin--split .slide--caption--split-left .slide__constrained > .slide__caption,
+  .splide--skin--split .slide--caption--split-zebra:nth-child(odd) .slide__constrained > .slide__caption,
+  .splide--skin--split .slide--caption--split-left .slide__caption,
+  .splide--skin--split .slide--caption--split-zebra:nth-child(odd) .slide__caption {
+    width: auto;
+    margin-left: 52%;
+  }
+
+  .splide--skin--split .slide--caption--split-right .slide__constrained > .slide__caption,
+  .splide--skin--split .slide--caption--split-zebra:nth-child(even) .slide__constrained > .slide__caption,
+  .splide--skin--split .slide--caption--split-right .slide__caption,
+  .splide--skin--split .slide--caption--split-zebra:nth-child(even) .slide__caption {
+    width: auto;
+    margin-right: 52%;
+  }
+
+  .splide--skin--split .slide__caption .clearfix::after {
+    clear: none;
+  }
+}

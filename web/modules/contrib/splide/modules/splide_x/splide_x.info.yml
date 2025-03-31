@@ -1,0 +1,12 @@
+name: Splide X
+type: module
+description: 'Provides Splide Slider extras and examples.'
+core_version_requirement: '>=9.4'
+package: Splide
+dependencies:
+  - splide:splide
+
+# Information added by Drupal.org packaging script on 2024-10-24
+version: '2.0.12'
+project: 'splide'
+datestamp: 1729740949

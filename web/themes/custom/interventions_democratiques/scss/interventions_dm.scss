@@ -80,6 +80,12 @@
 .layout-container {
 }
 
+.splide__pagination__page.is-active {
+  border: #ccc solid 1px;
+}
+.splide__toggle {
+  display: none;
+}
 // main {
 //   padding-top: 1.5em;
 // }
@@ -95,7 +101,7 @@
     min-height: 180px;
     display: inline-block;
     width: 100%;
-
+  }
     .views-field-title {
       margin-bottom: 10px;
       a {
@@ -204,7 +210,7 @@
         }
       }
     }
-  }
+ 
 }
 
 .section_actualites {

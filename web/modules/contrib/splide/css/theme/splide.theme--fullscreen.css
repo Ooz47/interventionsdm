@@ -1,0 +1,192 @@
+/**
+ * @file
+ * Best with 1 perPage, placed at external region.
+ *
+ * Detailed stylings are all yours, get yourself dirty.
+ */
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+.splide-wrapper--fullscreen {
+  background: #000;
+}
+
+.splide-wrapper--fullscreen,
+.splide-wrapper--fullscreen > .splide,
+.splide--skin--fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.splide-wrapper--fullscreen,
+.splide--skin--fullscreen {
+  height: 100%;
+  min-height: 100%;
+}
+
+.splide-wrapper--fullscreen {
+  z-index: 997;
+}
+
+.splide--skin--fullscreen {
+  z-index: 998;
+}
+
+.splide-wrapper--fullscreen > .splide.splide--nav {
+  z-index: 999;
+  top: auto;
+  bottom: 0;
+}
+
+.splide-wrapper--fullscreen.is-wrapper-nav--top > .splide.splide--nav {
+  z-index: 999;
+  top: 0;
+  bottom: auto;
+}
+
+.splide-wrapper--fullscreen .splide__slider {
+  margin-bottom: 0;
+}
+
+.splide--skin--fullscreen > .splide .splide__slider {
+  height: 100%;
+  min-height: 100%;
+  margin-bottom: 0;
+}
+
+/** @todo better way than over-specificity to support nested splides. */
+/* stylelint-disable declaration-no-important */
+.splide--skin--fullscreen .splide__list,
+.splide--skin--fullscreen .splide__track,
+.splide--skin--fullscreen .splide__slide,
+.splide--skin--fullscreen .slide__content,
+.splide--skin--fullscreen .media,
+.splide--skin--fullscreen .slide__media {
+  height: 100vh !important; /* csslint allow: known-properties, important */
+  min-height: 320px;
+}
+
+.splide--skin--fullscreen .splide__track {
+  margin: 0;
+  padding: 0;
+}
+
+.splide--skin--fullscreen .splide__slide {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.splide--skin--fullscreen .slide__media img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.splide--skin--fullscreen .slide__constrained {
+  position: absolute;
+  left: 50%;
+  width: 98%;
+  margin-left: -49%;
+}
+
+.splide--skin--fullscreen .slide__constrained .slide__caption {
+  position: relative;
+}
+
+.splide--skin--fullscreen .slide__caption {
+  color: #fff;
+  font-size: 22px;
+  font-size: 1.375rem;
+}
+
+.splide--skin--fullscreen .slide__title {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 48px;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.splide--skin--fullscreen .slide__link a {
+  text-decoration: none;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
+  border-top: 2px solid rgba(255, 255, 255, 0.8);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.splide--skin--fullscreen .slide__link a:hover {
+  text-decoration: none;
+  color: #fff;
+  border-color: #fff;
+}
+
+.splide--skin--fullscreen .splide__pagination {
+  bottom: 20px;
+}
+
+/* Views UI Preview */
+body.path-admin {
+  overflow: visible;
+}
+
+.path-admin .splide-wrapper--fullscreen,
+.path-admin .splide-wrapper--fullscreen .splide,
+.path-admin .splide--skin--fullscreen,
+.path-admin .splide--skin--fullscreen .slide__media {
+  position: relative;
+  min-height: 620px;
+}
+
+.path-admin .splide-wrapper--fullscreen .splide--nav {
+  position: absolute;
+  min-height: 80px;
+}
+
+.path-admin .splide--skin--fullscreen .splide__slider {
+  min-height: 120px;
+}
+
+/** Nested splides overrides. */
+.splide-wrapper--fullscreen .splide .splide {
+  position: relative;
+}
+
+.splide--skin--fullscreen .splide__slider .splide__slider {
+  height: auto;
+}
+
+.splide--skin--fullscreen .splide__list .splide__list {
+  height: auto !important; /* csslint allow: known-properties, important */
+  min-height: 40px;
+}
+
+@media (min-width: 65em) {
+  .splide--skin--fullscreen .slide__constrained {
+    padding-top: 10%;
+  }
+}
+
+@media (min-width: 90em) {
+  .splide--skin--fullscreen .slide__constrained {
+    width: 1170px;
+    margin-left: -585px;
+  }
+}

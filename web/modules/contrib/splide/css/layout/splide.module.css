@@ -1,0 +1,39 @@
+/**
+ * @file
+ * Provided basic layout for the Splide based on custom settings.
+ */
+
+/* Prevents collapsing splide when unsplide like one item. */
+.unsplide .splide__slide {
+  width: 100%;
+}
+
+.unsplide .splide__slide,
+.is-mounted .splide__slide {
+  position: relative;
+  visibility: visible;
+}
+
+.slide__content,
+.grid__content {
+  position: relative;
+}
+
+.slide__content::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+/**
+ * Media.
+ */
+.slide__media {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Center the image to reduce gap at RHS with smaller image, larger container */
+img.media__element {
+  margin: 0 auto;
+}

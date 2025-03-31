@@ -1,0 +1,22 @@
+uuid: 01f70908-7945-4f6f-af16-7c2343cb2195
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - splide_x
+id: x_fullscreen
+name: x_fullscreen
+weight: -6
+label: 'X Fullscreen'
+group: main
+skin: fullscreen
+breakpoint: 0
+optimized: true
+options:
+  settings:
+    type: loop
+    width: 100vw
+    height: 100vh
+    focus: center
+    snap: true

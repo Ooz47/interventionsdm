@@ -1,0 +1,91 @@
+/**
+ * @file.
+ * Provided basic styling for the Splide based on custom settings.
+ *
+ * @todo remove no-longer relevant overrides.
+ */
+
+/** Draggable. */
+.splide--draggable .splide__list {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.splide--draggable .splide__list:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.splide--draggable .splide__list:active a,
+.splide--draggable .splide__list:active .slide__caption {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/*
+.splide--draggable.is-less .splide__list {
+  cursor: default;
+}
+*/
+
+/* Fix for Chrome blue outline */
+.splide__slide:focus {
+  outline: 0; /* csslint allow: outline-none */
+}
+
+/* Makes the pointer work when bullets placed over the slide. */
+/* Overrides core > 1.3.11, otherwise thumbnails are non-clickable */
+.splide button,
+.splide--nav .splide__slide img {
+  pointer-events: auto;
+}
+
+/** @todo: Remove temp fix for when total <= perPage at 1.6.1+. */
+/** @see https://github.com/kenwheeler/slick/issues/262
+.is-less .splide__track {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+} */
+
+/* Fix for BigPipe CSS re-orders issue.
+.splide.is-less .splide__slide {
+  float: none;
+  display: inline-block;
+  vertical-align: top;
+}  */
+
+/* If having this: < ooo >, but bad without proper theming against .splide__arrows:
+.splide__arrows .splide__pagination {
+  height: 100%;
+} */
+
+.splide__arrows .splide__pagination li {
+  vertical-align: middle;
+}
+
+/* Autoplay progress. */
+.splide__progress {
+  position: relative;
+  z-index: 6;
+  margin-top: 1rem;
+  background: #293133;
+}
+
+.splide__progress__bar {
+  width: 0;
+  height: 2px;
+  transform: translateZ(0);
+  background: #ff6d2c;
+  will-change: width;
+}
+
+/* Do not interfere autoplay, already managed by library, else too early reset. */
+.splide:not(.is-autoplay) .splide__progress__bar {
+  transition: width 400ms ease;
+}

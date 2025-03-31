@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - splide_x
+id: x_splide_nav
+name: x_splide_nav
+label: 'X Splide nav'
+weight: -1
+group: nav
+skin: asnavfor
+breakpoint: 2
+optimized: true
+options:
+  settings:
+    type: loop
+    focus: center
+    pagination: 'false'
+    perPage: 7
+    clones: 3
+    slideFocus: true
+    isNavigation: true
+  breakpoints:
+    -
+      breakpoint: 769
+      unsplide: false
+      settings:
+        focus: center
+        perPage: 5
+    -
+      breakpoint: 481
+      unsplide: false
+      settings:
+        focus: center
+        perPage: 3

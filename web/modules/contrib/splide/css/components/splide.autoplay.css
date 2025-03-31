@@ -1,0 +1,39 @@
+/**
+ * @file.
+ * Provided basic styling for the Splide autoplay v4.
+ *
+ * @todo refine, and or remove dups of library.
+ */
+
+.splide__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: 50%;
+  background: #737e80;
+}
+
+.splide__toggle svg {
+  width: 46%;
+  height: 46%;
+  transition: fill 0.2s ease;
+  fill: #e5eeee;
+}
+
+.splide__toggle.is-active .splide__toggle__play,
+.splide__toggle__pause {
+  display: none;
+}
+
+.splide__toggle.is-active .splide__toggle__pause {
+  display: inline;
+}
+
+.splide__toggle__play {
+  margin-left: 2px;
+}

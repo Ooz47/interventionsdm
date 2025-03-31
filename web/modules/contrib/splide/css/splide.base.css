@@ -1,0 +1,111 @@
+/**
+ * @file.
+ * Provided basic styling for the Splide.
+ */
+
+.splide-wrapper,
+.splide,
+.splide *,
+/* In cased called without .blazy. */
+.splide *::after,
+.splide *::before {
+  box-sizing: border-box;
+}
+
+/* Prevents overflowing nested slides. */
+.splide,
+.splide-wrapper {
+  position: relative;
+  /* Do not set 100% to .splide, breaks navigation positioning. */
+  /* width: 100%; */
+  max-width: 100%;
+}
+
+.splide--rtl {
+  direction: rtl;
+}
+
+/**
+ * Misc overrides core splide.
+ */
+.splide__slider {
+  position: relative;
+}
+
+.is-mounted .splide__slider {
+  overflow: visible;
+}
+
+.splide__slider::before,
+.splide__slider::after {
+  display: table;
+  content: "";
+}
+
+.splide__slider::after {
+  clear: both;
+}
+
+/* V4 breaking changes. */
+.splide__track {
+  min-height: 12px;
+}
+
+.splide img {
+  height: auto;
+  will-change: auto !important; /* csslint allow: known-properties, important */
+}
+
+.splide img,
+.splide iframe {
+  max-width: 100%;
+  border: 0;
+}
+
+.splide__slide.is-active {
+  z-index: 4;
+}
+
+/** Prevents from being hidden due to layering issues with arrow down. */
+.splide__arrows {
+  z-index: 8;
+  /* display: none; */
+}
+
+/*
+.is-arrowed .splide__arrows {
+  display: block;
+}
+*/
+
+.splide.is-less .splide__arrows {
+  display: none;
+}
+
+.splide__arrow--down {
+  z-index: 9;
+}
+
+/* Above the arrows to allow hover thumbnail with pagination. */
+.splide .splide__pagination {
+  z-index: 10;
+}
+
+/* Above arrow and pagination. */
+.splide__toggle {
+  position: relative;
+  z-index: 11;
+}
+
+/* Fix for destroy. */
+.splide.unsplide .splide__list,
+.splide.unsplide .splide__slide {
+  display: block;
+  width: 100%;
+}
+
+.splide:not(.is-dragging) .slide p,
+.splide:not(.is-dragging) .slide__caption {
+  cursor: auto;
+  user-select: text;
+}

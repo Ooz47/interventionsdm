@@ -1,0 +1,103 @@
+
+Splide 2.x-dev, 2024-10-23
+--------------------------
+- Fixed for a single slide with zoom for Splidebox.
+
+Splide 2.x-dev, 2024-08-11
+--------------------------
+- Issue #3459163 by W01F: Confusing width breaking container on mobile.
+- Issue #3461086 by devkinetic: Arrows not working within optionsets.
+
+Splide 2.x-dev, 2024-05-15
+--------------------------
+- Fixed for breakpoint arrows visibility using is-arrowed class.
+
+Splide 2.x-dev, 2024-05-12
+--------------------------
+- Moved arrows HTML markup to the bottom.
+- Added variable arrows_attributes, pagination_attributes for easy preprocess.
+
+Splide 2.x-dev, 2024-05-06
+--------------------------
+- Fixed for formatter overridable pagination.
+- Fixed for Splide Grouping admin grids.
+- Added animation option for custom work.
+
+Splide 2.x-dev, 2024-04-12
+--------------------------
+- Fixed for undefined p for tiny zoom image causing click fails.
+- Fixed for jumpy zoom.
+
+Splide 2.x-dev, 2024-04-10
+--------------------------
+- Reverted double tap to zoom to single.
+
+Splide 2.x-dev, 2024-04-03
+--------------------------
+- Fixed for dynamic breakpoints is-less CSS class.
+- Removed useless ::withElementThumbnail method.
+
+Splide 2.x-dev, 2024-03-31
+--------------------------
+- Removed useless disabled arrows for rewind option.
+- Issue #3409579: splide-minimal.html.twig used for non-vanilla display.
+- Issue #3436319 by KarlShea: Thumbnail navigation arrows broken.
+- Issue #3436288 by KarlShea: 'step' doesn't make it through to breakpoint
+  options for heightRatio.
+
+Splide 2.x-dev, 2024-03-19
+--------------------------
+- Added few more missing options for v4
+
+Splide 2.x-dev, 2024-03-08
+--------------------------
+- Fixed for unwanted asnavfor clone styling.
+- Changed disabled arrow behaviors to not block click interaction.
+
+Splide 2.x-dev, 2024-03-06
+--------------------------
+- Modernized touch and mouse events to pointer events API.
+- Changed single to double tap to zoom to avoid conflicting clicks.
+- Changed zoom closer icon with SVG for cross-theme compat.
+- Enhanced wheel zoom.
+- Fixed for zoom erratic drags.
+- Fixed for pinch zoom.
+- Fixed for missing grid is-less class.
+- Fixed for splide navigation markup.
+
+Splide 2.x-dev, 2023-12-11
+--------------------------
+- Removed zoom scroll JS for CSS.
+
+Splide 2.x-dev, 2023-10-08
+--------------------------
+- Fixed for fullscreen sample.
+- Added is-autoplay--off and splide--TRANSITION_TYPE CSS classes to avoid FOUC.
+
+Splide 2.x-dev, 2023-10-04
+--------------------------
+- Removed deprecated lazyLoad settings for Blazy.
+- Moved CSS navigation rules into splide/nav library.
+- Added some new options as per splide v4.
+- Fixed for vertical navigation positioning.
+- Moved splide library theme CSS into base to allow module components work.
+
+Splide 2.x-dev, 2023-10-03
+--------------------------
+- Fixed for autoplay being overriden by formatters Override main optionset.
+- Added arrows and direction to breakpoints settings.
+- Added supports for programmatic options via skin thumbnail definitions.
+- Removed few deprecated lazyLoad traces.
+- Moved splide_progress out of block_autoplay for non-autoplay.
+
+Splide 2.x-dev, 2023-10-01
+--------------------------
+- Fixed for navigation options being overriden by the main display.
+
+Splide 2.x-dev, 2023-09-25
+--------------------------
+- Issue #3384337 by gausarts, devkinetic: Splide v4.
+
+Splide 2.x-dev, 2023-09-18
+--------------------------
+- Initial 2.x commit.

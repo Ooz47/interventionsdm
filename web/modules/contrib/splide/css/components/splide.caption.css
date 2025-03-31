@@ -1,0 +1,127 @@
+/**
+ * @file
+ * Provided basic caption for the Splide based on custom settings.
+ */
+
+/* Overrides .splide__slider to make caption text selectable. */
+.slide__caption {
+  z-index: 3;
+  /* Normally absolutely positioned. */
+  width: 100%;
+  max-width: 100%;
+  cursor: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  -o-user-select: text;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* Only display when JS is ready. */
+.is-loading .slide__caption {
+  visibility: hidden;
+}
+
+/**
+ * Slide layouts, adjust accordingly per actual container slide.
+ */
+.slide__title {
+  margin: 10px 0 5px;
+  line-height: 1.2;
+}
+
+.slide__link {
+  margin: 30px auto;
+}
+
+/**
+ * Complex layout needs custom refinement for mobile, hence it is reasonable
+ * to apply for Desktop up. Adjust mobile version accordingly.
+ */
+@media (min-width: 64em) {
+
+  .slide__caption {
+    top: 10%;
+    left: 0;
+  }
+
+  .slide--caption--center .slide__caption,
+  .slide--caption--center-top .slide__caption,
+  .slide--caption--left .slide__caption,
+  .slide--caption--right .slide__caption {
+    width: 42%;
+  }
+
+  .slide--caption--center .slide__caption {
+    position: absolute;
+    top: 50%;
+    margin-top: -16%;
+  }
+
+  .slide--caption--center .slide__caption,
+  .slide--caption--center-top .slide__caption {
+    position: absolute;
+    left: 50%;
+    padding: 0;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .slide--caption--center .slide__caption {
+    transform: translate(-50%, -50%);
+  }
+
+  .slide--caption--left .slide__caption {
+    position: absolute;
+  }
+
+  .slide--caption--right .slide__caption {
+    position: absolute;
+    right: 0;
+    left: auto;
+  }
+
+  .slide--caption--top .slide__caption,
+  .slide--caption--bottom .slide__caption {
+    position: absolute;
+    width: 100%;
+  }
+
+  .slide--caption--top .slide__caption {
+    top: 0;
+  }
+
+  .slide--caption--bottom .slide__caption {
+    top: auto;
+    bottom: 0;
+  }
+
+  .slide--caption--stage-left .slide__caption,
+  .slide--caption--stage-right .slide__caption,
+  .slide--caption--stage-zebra .slide__caption {
+    position: absolute;
+    left: 50%;
+    width: 82%;
+    padding: 0;
+    transform: translateX(-50%);
+  }
+
+  .slide--caption--below .slide__caption {
+    padding: 20px 0;
+  }
+
+  .splide--nav .slide__caption,
+  .slide--caption--below .slide__caption {
+    position: relative;
+    top: auto;
+    width: 100%;
+  }
+
+  .is-carousel .slide--caption--center .slide__caption,
+  .is-carousel .slide--caption--center-top .slide__caption {
+    left: 0;
+    width: 100%;
+    margin-left: auto;
+  }
+
+}

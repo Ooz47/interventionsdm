@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Default theme implementation for both vanilla and navigation.
+ *
+ * This is a vanilla alternative for splide__slide.html.twig where everything is
+ * dumped as is into 'item'. Think of it as a raw individual item output.
+ * Choosing vanilla means you are on your own, and want a more controlled item.
+ * Be warned! This template is also used by thumbnail navigation which happens
+ * to have the same structure and attributes. Be sure to not mess up thumbnails
+ * should you need to work with vanilla versions.
+ *
+ * Available variables:
+ * - attributes: An array of attributes to apply to the element.
+ * - item: A renderable array of the slide content.
+ * - item.slide: A renderable array of the (thumbnail) image/background.
+ * - item.caption: A renderable array containing caption text.
+ * - settings: An array containing the given settings.
+ *
+ * @see template_preprocess_splide_minimal()
+ */
+#}
+{%
+  set classes = [
+    'slide--' ~ delta
+  ]
+%}
+{% set use_blazy = blazies.use.theme_thumbnail  %}
+{% block splide_minimal %}
+  {%- if settings.wrapper -%}<li{{ attributes.addClass(classes) }}>{%- endif -%}
+    {%- if settings.current_item == 'nav' -%}
+      {# The thumbnail navigation. If item.slide is empty, regular tabs apply. #}
+      {%- if use_blazy -%}
+        {{- item -}}
+      {% else %}
+        {# @todo remove all below at 3.x to use blazy thumbnail. #}
+        {%- if item.slide is not empty -%}
+          <div class="slide__thumbnail">{{- item.slide -}}</div>
+        {%- endif -%}
+        {%- if item.caption is not empty -%}
+          <div class="slide__caption">{{- item.caption -}}</div>
+        {%- endif -%}
+      {%- endif -%}
+    {% else %}
+      {# The vanilla content. #}
+      {{- item -}}
+    {%- endif -%}
+  {%- if settings.wrapper -%}</li>{%- endif -%}
+{% endblock %}

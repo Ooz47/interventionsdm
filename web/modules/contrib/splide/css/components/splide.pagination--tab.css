@@ -1,0 +1,11 @@
+/**
+ * @file
+ * Labeled pagination.
+ */
+
+.splide.is-paginated--tab .splide__pagination button {
+  width: auto;
+  height: auto;
+  transform: scale(1);
+  border-radius: 0;
+}
