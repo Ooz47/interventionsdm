@@ -25,3 +25,9 @@ global:
       css/theme/print.css: { media: print }
   dependencies:
     - core/drupal
+webmaster:
+  css:
+    theme:
+      css/webmaster.css: {}
+  dependencies:
+    - core/drupal

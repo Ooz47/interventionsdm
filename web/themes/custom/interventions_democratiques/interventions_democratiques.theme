@@ -12,56 +12,81 @@ use Drupal\node\NodeInterface;
 /**
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
-function interventions_democratiques_preprocess_html(array &$variables): void {
+function interventions_democratiques_preprocess_html(array &$variables): void
+{
 
-    // $view_mode = $variables;
-      // Kint::dump('sds');
+  // $view_mode = $variables;
+  // Kint::dump('sds');
   // kint_dump('qdssqd','ma var');
-    $node = \Drupal::routeMatch()->getParameter('node');
-    // Kint($node->status);
-    if ($node instanceof NodeInterface) {
-      $variables['attributes']['class'][] = 'page-node page-node-' . $node->getType();
-      $variables['attributes']['class'][] = 'page-node-' . $node->id();
-  
-      if ($node->status->getString() == 1) {
-   
-   } else {
-    $variables['attributes']['class'][] = 'page-node-unpublished';
-   }
+  $node = \Drupal::routeMatch()->getParameter('node');
+  // Kint($node->status);
+  if ($node instanceof NodeInterface) {
+    $variables['attributes']['class'][] = 'page-node page-node-' . $node->getType();
+    $variables['attributes']['class'][] = 'page-node-' . $node->id();
 
-  
+    if ($node->status->getString() == 1) {
     } else {
-      $variables['attributes']['class'][] = 'page-no-node';
+      $variables['attributes']['class'][] = 'page-node-unpublished';
     }
-  
-    if ($variables['root_path'] == 'user') {
-      $variables['attributes']['class'][] = 'page-user';
-    }
+  } else {
+    $variables['attributes']['class'][] = 'page-no-node';
+  }
 
-    $view = \Drupal::routeMatch()->getParameter('view_id');
-  
-    if ($view) {
-      $current_path = \Drupal::service('path.current')->getPath();
-      $internal_path = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
-  
-      // Assign it to body class 
-      $variables['attributes']['class'][] = str_replace("/", "", $internal_path);
-    }
-  
+  if ($variables['root_path'] == 'user') {
+    $variables['attributes']['class'][] = 'page-user';
+  }
+  // Ajoute 'page-admin' si le chemin ou la route suggère une page d'administration
+  $current_path = \Drupal::service('path.current')->getPath();
+  // $route_name = \Drupal::routeMatch()->getRouteName();
+  if (
+    str_starts_with($current_path, '/admin') ||
+    str_starts_with($current_path, '/node/add') ||
+    str_starts_with($current_path, '/taxonomy')
+  ) {
+    $variables['attributes']['class'][] = 'page-admin';
+  }
 
+  $internal_path = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  if ($internal_path !== '/') {
+    $variables['attributes']['class'][] = str_replace('/', '-', trim($internal_path, '/'));
+  }
 
+  $view = \Drupal::routeMatch()->getParameter('view_id');
+
+  if ($view) {
+    $current_path = \Drupal::service('path.current')->getPath();
+    $internal_path = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+
+    // Assign it to body class 
+    $variables['attributes']['class'][] = str_replace("/", "", $internal_path);
+  }
 }
+
+
+function interventions_democratiques_page_attachments_alter(array &$attachments)
+{
+  /**
+   * Retire meta generator
+   */
+  foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
+    if ($attachment[1] == 'system_meta_generator') {
+      unset($attachments['#attached']['html_head'][$key]);
+    }
+  }
+  // kint_dump('Webmaster CSS hook activé','alter');
+  $current_user = \Drupal::currentUser();
+  if (in_array('webmaster', $current_user->getRoles())) {
+    $attachments['#attached']['library'][] = 'interventions_democratiques/webmaster';
+  }
+}
+
 
 /**
  * Implements hook_preprocess_HOOK() for page.html.twig.
  */
-function interventions_democratiques_preprocess_page(array &$variables): void {
-
-}
+function interventions_democratiques_preprocess_page(array &$variables): void {}
 
 /**
  * Implements hook_preprocess_HOOK() for node.html.twig.
  */
-function interventions_democratiques_preprocess_node(array &$variables): void {
-
-}
+function interventions_democratiques_preprocess_node(array &$variables): void {}

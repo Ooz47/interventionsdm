@@ -1,0 +1,121 @@
+<?php
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Menu\MenuLinkManagerInterface;
+use Drupal\devel\Plugin\Devel\Dumper\Kint;
+use Kint\Kint as KintKint;
+use Drupal\Core\Url;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
+
+
+/**
+ * @file
+ * Primary module hooks for interventionsdm module.
+ */
+
+
+/**
+ * Implémente hook_menu_links_discovered_alter().
+ */
+function interventionsdm_menu_links_discovered_alter(&$links) {
+    // Détermine les chemins de menu à masquer pour les webmasters.
+    $paths_to_hide = [
+      'system.admin_index',
+      'entity.taxonomy_vocabulary.add_form',
+      'entity.taxonomy_vocabulary.edit_form',
+      'entity.taxonomy_vocabulary.delete_form',
+      // Ajoute ici d'autres liens internes (route names), pas les paths bruts.
+    ];
+
+    
+    $current_user = \Drupal::currentUser();
+    // kint_dump($current_user);
+    // kint_dump($current_user->getRoles());
+    // Si l'utilisateur est connecté et a le rôle 'webmaster'.
+    if ($current_user->isAuthenticated() && in_array('webmaster', $current_user->getRoles())) {
+      foreach ($paths_to_hide as $route_name) {
+        foreach ($links as $key => $link) {
+          if ((isset($link['route_name'])) && ($link['route_name'] === $route_name)) {
+            // Supprime le lien du menu.
+            unset($links[$key]);
+          }
+        }
+      }
+    }
+  }
+
+  function interventionsdm_page_attachments(array &$attachments) {
+    
+    $current_user = \Drupal::currentUser();
+    // dsm($current_user);
+    // kint("paths_to_hide");
+    if (in_array('webmaster', $current_user->getRoles())) {
+      $route_name = \Drupal::routeMatch()->getRouteName();
+      $attachments['#attached']['html_head'][] = [
+        [
+          '#tag' => 'script',
+          '#value' => "console.log('ROUTE: $route_name');",
+        ],
+        'interventionsdm_debug_route'
+      ];
+    }
+  }
+  
+
+
+
+/**
+ * Implements hook_menu_local_tasks_alter() for Drupal 11.
+ */
+function interventionsdm_menu_local_tasks_alter(
+  array &$data,
+  string $route_name,
+  RefinableCacheableDependencyInterface &$cacheability
+): void {
+  $current_user = \Drupal::currentUser();
+
+  // Ne fait rien si l'utilisateur n'est pas "webmaster"
+  if (!in_array('webmaster', $current_user->getRoles())) {
+    return;
+  }
+
+  // Onglets à retirer pour les webmasters, selon le contexte de page
+  $tabs_to_remove = [
+    'entity.taxonomy_vocabulary.overview_form',
+    // 'entity.taxonomy_vocabulary.edit_form',
+    // 'entity.taxonomy_vocabulary.fields',
+    // 'entity.taxonomy_vocabulary.field_ui',
+  ];
+
+  // Si on est sur l’un des écrans de vocabulaire
+  if (in_array($route_name, $tabs_to_remove)) {
+    // Supprime les tabs secondaires pour cette route
+    if (isset($data['tabs'][0])) {
+      unset($data['tabs'][0]);
+    }
+    if (isset($data['tabs'][1])) {
+      unset($data['tabs'][1]);
+    }
+
+    // Ajoute une dépendance au contexte utilisateur pour invalider le cache
+    $cacheability->addCacheContexts(['user.roles']);
+  }
+}
+
+  
+function interventionsdm_menu_local_actions_alter(&$local_actions) {
+
+    $current_user = \Drupal::currentUser();
+
+    // Si l'utilisateur a le rôle "webmaster", on supprime l'action ciblée.
+    if (in_array('webmaster', $current_user->getRoles())) {
+      // Identifiant du lien d'action "Ajouter un vocabulaire"
+      $action_key = 'entity.taxonomy_vocabulary.add_form';
+  
+      // Supprime le lien s’il existe
+      if (isset($local_actions[$action_key])) {
+        unset($local_actions[$action_key]);
+
+      }
+    }
+}

@@ -611,3 +611,20 @@ input[type="submit"],
 color:$rougeprimaire;
 }
 }
+
+
+/*USER LOGIN*/
+
+#user-login-form {
+.form-item, #edit-actions {
+  margin: 10px;
+  label {
+  
+      margin-right: 20px;
+
+  }
+  input{
+    padding: 5px 5px;
+  }
+}
+}

@@ -185,3 +185,10 @@ input[type="submit"]:hover, .comment-add a:hover, .comment_forbidden a:hover { b
 
 /**PAGE RECHERCHE */
 .search-results .title a { color: #cf1322; }
+
+/*USER LOGIN*/
+#user-login-form .form-item, #user-login-form #edit-actions { margin: 10px; }
+
+#user-login-form .form-item label, #user-login-form #edit-actions label { margin-right: 20px; }
+
+#user-login-form .form-item input, #user-login-form #edit-actions input { padding: 5px 5px; }

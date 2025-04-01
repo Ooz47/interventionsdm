@@ -1,0 +1,5 @@
+name: 'interventionsdm'
+type: module
+description: 'Module spécifique au site interventions-democratiques.fr'
+package: Custom
+core_version_requirement: ^10 || ^11

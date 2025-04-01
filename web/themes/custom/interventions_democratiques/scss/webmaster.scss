@@ -1,0 +1,47 @@
+@import "utilities";
+
+body::after {
+    content: "WEBMASTER MODE";
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: #ff0;
+    color: #000;
+    padding: 4px 8px;
+    font-size: 12px;
+    z-index: 9999;
+  }
+
+
+  .page-admin{
+    table,.action-links{
+    width:100%;
+    
+    a{text-decoration:none;
+        color:$rougeprimaire;}
+    }
+    
+    input[type=submit], #edit-cancel{
+    margin-left:10px;
+        margin-bottom: 10px
+    }
+
+    .field--type-text-long .js-text-format-wrapper .form-wrapper{
+        display:none;
+        }
+        .vertical-tabs ul.vertical-tabs-list li{
+        height:64px;
+        }
+
+        &.admin-structure-taxonomy {
+            #block-interventions-democratiques-help {
+                display: none;
+            }
+        }
+        &.admin-content {
+
+            input[type="checkbox"]{
+                display:none;
+                }
+        }
+    }
