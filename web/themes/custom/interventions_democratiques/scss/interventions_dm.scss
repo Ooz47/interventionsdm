@@ -585,7 +585,7 @@ input[type="submit"],
 .comment-add a,
 .comment_forbidden a {
   color: #fff;
-  padding: 3px 8px;
+  padding: 5px 8px;
   cursor: pointer;
   background: $rougeprimaire;
   display: inline-block;
@@ -594,6 +594,8 @@ input[type="submit"],
   -webkit-border-radius: 0;
   border-radius: 0;
   text-decoration: none;
+  font-weight: 600;
+
   @include transition(background, 0.2s, ease-out);
 
   &:hover {
@@ -601,7 +603,7 @@ input[type="submit"],
     @include transition(background, 0.2s, ease-out);
     color: #fff;
     border: 0;
-    padding: 3px 8px;
+
   }
 }
 

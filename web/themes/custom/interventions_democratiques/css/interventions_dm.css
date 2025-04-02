@@ -179,9 +179,9 @@ footer a { color: #eeeff1; }
 
 #search-block-form input[type="submit"] { margin-left: 5px; }
 
-input[type="submit"], .comment-add a, .comment_forbidden a { color: #fff; padding: 3px 8px; cursor: pointer; background: #cf1322; display: inline-block; border: 0; -webkit-appearance: none; -webkit-border-radius: 0; border-radius: 0; text-decoration: none; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; }
+input[type="submit"], .comment-add a, .comment_forbidden a { color: #fff; padding: 5px 8px; cursor: pointer; background: #cf1322; display: inline-block; border: 0; -webkit-appearance: none; -webkit-border-radius: 0; border-radius: 0; text-decoration: none; font-weight: 600; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; }
 
-input[type="submit"]:hover, .comment-add a:hover, .comment_forbidden a:hover { background: #2f2f2f; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; color: #fff; border: 0; padding: 3px 8px; }
+input[type="submit"]:hover, .comment-add a:hover, .comment_forbidden a:hover { background: #2f2f2f; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; color: #fff; border: 0; }
 
 /**PAGE RECHERCHE */
 .search-results .title a { color: #cf1322; }

@@ -6,7 +6,8 @@ use Kint\Kint as KintKint;
 use Drupal\Core\Url;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
-
+use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**
  * @file
@@ -119,3 +120,115 @@ function interventionsdm_menu_local_actions_alter(&$local_actions) {
       }
     }
 }
+
+
+
+/**
+ * Attache form id  à to les form elements.
+ *
+ * @param $form
+ *   The form or form element which children should have form id attached.
+ * @param $form_id
+ *   The form id attached to form elements.
+ *
+ * @return array
+ */
+function atommod_attach_form_id(&$form, $form_id)
+{
+  foreach (Element::children($form) as $child) {
+    if (!isset($form[$child]['#form_id'])) {
+      $form[$child]['#form_id'] = $form_id;
+    }
+    atommod_attach_form_id($form[$child], $form_id); // recurse for children
+  }
+}
+
+//Modification des formulaire
+function interventionsdm_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
+  // atommod_attach_form_id($form, $form['#id']);
+  // dsm($form_id);
+  $current_user = \Drupal::entityTypeManager()->getStorage('user')->load(\Drupal::currentUser()->id());
+  //  dsm($form);
+  //  Kint($current_user);
+  if (($form_id === 'user_form') || ($form_id === 'user_register_form')) {
+   
+    if (($current_user->hasRole('administrator')) || ($current_user->id() == '1')) {
+
+      return;
+    } else {
+      if (($current_user->hasRole('webmaster'))) {
+        if ($form_id === 'user_form') {
+        
+          $user = $form_state->getFormObject()->getEntity();
+        
+          if ($user->hasRole('administrator')) {
+            throw new AccessDeniedHttpException();
+          }
+        }
+
+        if ($form_id === 'user_register_form') {
+          $form['account']['notify']['#access'] = FALSE;
+        }
+      } 
+    }
+  }
+//  Kint($form_id);
+ /*Gestion accès form Add et edit */
+ $nodetype = array(
+  "node_abecedaire_form", "node_abecedaire_edit_form",
+  "node_actualit__form", "node_actualit__edit_form",
+  "node_article_form", "node_article_edit_form",
+  "node_documents_form", "node_documents_edit_form",
+  "node_notes_de_lectures_form", "node_notes_de_lectures_edit_form",
+  "node_page_form", "node_page_edit_form",
+  "node_revue_de_presse_form", "node_revue_de_presse_edit_form"
+);
+Kint($form);
+if (in_array($form_id, $nodetype)) {
+  $form['revision']['#access'] = FALSE;
+  $form['revision_log']['#access'] = FALSE;
+  // $form['simple_sitemap_index_now']['#access'] = FALSE;
+  // $form['status']['#access'] = TRUE;
+  // $form['comment_node_revue_de_presse']['#access'] = FALSE;
+  $form['comment_node_actualit_']['#access'] = FALSE;
+  $form['comment_node_article']['#access'] = FALSE;
+  $form['comment_node_abecedaire']['#access'] = FALSE;
+  $form['comment_node_notes_de_lectures']['#access'] = FALSE;
+  $form['comment_node_documents']['#access'] = FALSE;
+}
+
+if (($form_id == 'node_abecedaire_form') || ($form_id == 'node_page_form')) {
+	  
+
+  if (!$current_user->hasRole('administrator')){
+    $form['author']['#access'] = FALSE;	
+  }
+     }
+
+     Kint($form_id);
+$nodetype = array(
+ "taxonomy_term_auteurs_form",
+ "taxonomy_term_r_gion_territoire_pays_form",
+ "taxonomy_term_th_matiques_form",
+ "media_document_edit_form", "media_document_add_form",
+ "media_audio_edit_form", "media_audio_add_form",
+ "media_image_edit_form", "media_image_add_form",
+ "media_video_edit_form", "media_video_add_form",
+ "media_remote_video_edit_form", "media_remote_video_add_form",
+
+);
+// Kint($form);
+if (in_array($form_id, $nodetype)) {
+  $form['revision']['#access'] = FALSE;
+  $form['revision_log']['#access'] = FALSE;
+  $form['revision_information']['#access'] = FALSE;
+  $form['relations']['#access'] = FALSE;
+  // $form['simple_sitemap_index_now']['#access'] = FALSE;
+  // $form['status']['#access'] = TRUE;
+
+  if (($form_id =="taxonomy_term_thematiques_form") || ($form_id =="taxonomy_term_categories_actualites_form")) {
+    $form['status']['#access'] = FALSE;
+  }
+}
+} //FORM_ALTER
