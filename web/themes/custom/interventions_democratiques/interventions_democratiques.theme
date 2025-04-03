@@ -146,3 +146,19 @@ function interventions_democratiques_views_pre_render(ViewExecutable $view) {
     }
   }
 }
+
+
+function interventions_democratiques_preprocess_views_view(&$variables) {
+  $view = $variables['view'];
+
+  // Ajoute le machine name du display (ex: 'page_1', 'block_5')
+  $variables['display_id'] = $view->current_display;
+
+  // Ajoute un nom CSS-safe (ex: 'page-1' au lieu de 'page_1')
+  $variables['display_css'] = strtr($view->current_display, ['_' => '-']);
+
+  // Ajoute le titre du display (ex: 'Bloc d’actualités')
+  if (!empty($view->display_handler)) {
+    $variables['display_title'] = $view->display_handler->getOption('display_title');
+  }
+}

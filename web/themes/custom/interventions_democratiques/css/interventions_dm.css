@@ -21,6 +21,8 @@
 
 @font-face { font-family: "FontAwesomeRegular"; src: url("../fonts/webfonts/fa-regular-400.eot"); src: url("../fonts/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/webfonts/fa-regular-400.woff") format("woff"), url("../fonts/webfonts/fa-regular-400.ttf") format("truetype"), url("../fonts/webfonts/fa-regular-400.svg#FontAwesome5Free-Regular") format("svg"); font-weight: normal; font-style: normal; font-display: swap; }
 
+.layout-container .layout-content { min-width: 1px; overflow-x: hidden; }
+
 .splide__pagination__page.is-active { border: #ccc solid 1px; }
 
 .splide__toggle { display: none; }
@@ -46,7 +48,7 @@
 
 .views-element-container .views-field-field-region a:hover, .views-element-container .views-field-field-thematique a:hover, .views-element-container .views-field-comment-count a:hover, .views-element-container .views-field-type a:hover { color: #ffffff; background: #cf1322; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; /**/ }
 
-.views-element-container .views-field-type { font-size: 12px; font-size: .75rem; margin-bottom: 5px; text-transform: none; color: #ffffff; font-weight: 700; line-height: 1.5em; padding: 1px 4px; min-height: 18px; /*color: #fff;*/ text-align: center; background-color: #cf1322; text-decoration: none; border-radius: 5px; letter-spacing: 1px; }
+.views-element-container .views-field-type { font-size: 12px; font-size: 0.75rem; margin-bottom: 5px; text-transform: none; color: #ffffff; font-weight: 700; line-height: 1.5em; padding: 1px 4px; min-height: 18px; /*color: #fff;*/ text-align: center; background-color: #cf1322; text-decoration: none; border-radius: 5px; letter-spacing: 1px; }
 
 .views-element-container .views-field-field-media-image img, .views-element-container .views-field-field-image-1 img { border: 1px solid #efefef; padding: 3px; }
 
@@ -126,7 +128,7 @@
 
 .page-node .content .field-comments article.unpublished { background: #e8e8e8; }
 
-.page-node .content .field-comments article.unpublished .markunpublished { display: block; height: 0; overflow: visible; background-color: transparent; color: #d8d8d885; font-size: 75px; line-height: 1; font-family: Impact,"Arial Narrow",Helvetica,sans-serif; font-weight: bold; text-transform: uppercase; text-align: center; word-wrap: break-word; position: absolute; top: 25%; left: 25%; }
+.page-node .content .field-comments article.unpublished .markunpublished { display: block; height: 0; overflow: visible; background-color: transparent; color: #d8d8d885; font-size: 75px; line-height: 1; font-family: Impact, "Arial Narrow", Helvetica, sans-serif; font-weight: bold; text-transform: uppercase; text-align: center; word-wrap: break-word; position: absolute; top: 25%; left: 25%; }
 
 .page-node .content .field-comments .indented { display: flex; justify-content: flex-end; }
 
@@ -181,7 +183,7 @@ footer a { color: #eeeff1; }
 
 #search-block-form { display: flex; justify-content: flex-end; }
 
-#search-block-form input[type="submit"] { margin-left: 5px; }
+#search-block-form input[type="submit"] { margin-left: 5px; margin-top: 0; }
 
 input[type="submit"], .comment-add a, .comment_forbidden a { color: #fff; padding: 5px 8px; cursor: pointer; background: #cf1322; display: inline-block; border: 0; -webkit-appearance: none; -webkit-border-radius: 0; border-radius: 0; text-decoration: none; font-weight: 600; text-transform: uppercase; margin: 10px 10px 0 0; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; }
 
@@ -198,14 +200,14 @@ input[type="submit"]:hover, .comment-add a:hover, .comment_forbidden a:hover { b
 #user-login-form .form-item input, #user-login-form #edit-actions input { padding: 5px 5px; }
 
 /*Page user form*/
-form.user-form .form-item, form.user-login-form .form-item, form.user-pass .form-item, form.taxonomy-term-form .form-item { margin: 1rem 0; }
+form.user-form .form-item, form.user-login-form .form-item, form.user-pass .form-item, form.taxonomy-term-form .form-item, .media-form .form-item { margin: 1rem 0; }
 
-form.user-form .form-item > label, form.user-form .form-item legend, form.user-login-form .form-item > label, form.user-login-form .form-item legend, form.user-pass .form-item > label, form.user-pass .form-item legend, form.taxonomy-term-form .form-item > label, form.taxonomy-term-form .form-item legend { font-weight: 600; display: block; }
+form.user-form .form-item > label, form.user-form .form-item legend, form.user-login-form .form-item > label, form.user-login-form .form-item legend, form.user-pass .form-item > label, form.user-pass .form-item legend, form.taxonomy-term-form .form-item > label, form.taxonomy-term-form .form-item legend, .media-form .form-item > label, .media-form .form-item legend { font-weight: 600; display: block; }
 
-form.user-form .form-item .description, form.user-login-form .form-item .description, form.user-pass .form-item .description, form.taxonomy-term-form .form-item .description { font-size: 0.8rem; }
+form.user-form .form-item .description, form.user-login-form .form-item .description, form.user-pass .form-item .description, form.taxonomy-term-form .form-item .description, .media-form .form-item .description { font-size: 0.8rem; }
 
-form.user-form .form-item input, form.user-login-form .form-item input, form.user-pass .form-item input, form.taxonomy-term-form .form-item input { padding: 5px; }
+form.user-form .form-item input, form.user-login-form .form-item input, form.user-pass .form-item input, form.taxonomy-term-form .form-item input, .media-form .form-item input { padding: 5px; }
 
-form.user-form .form-item.form-type-radio, form.user-form .form-item.form-type-checkbox, form.user-login-form .form-item.form-type-radio, form.user-login-form .form-item.form-type-checkbox, form.user-pass .form-item.form-type-radio, form.user-pass .form-item.form-type-checkbox, form.taxonomy-term-form .form-item.form-type-radio, form.taxonomy-term-form .form-item.form-type-checkbox { margin: 0; }
+form.user-form .form-item.form-type-radio, form.user-form .form-item.form-type-checkbox, form.user-login-form .form-item.form-type-radio, form.user-login-form .form-item.form-type-checkbox, form.user-pass .form-item.form-type-radio, form.user-pass .form-item.form-type-checkbox, form.taxonomy-term-form .form-item.form-type-radio, form.taxonomy-term-form .form-item.form-type-checkbox, .media-form .form-item.form-type-radio, .media-form .form-item.form-type-checkbox { margin: 0; }
 
-form.user-form .form-item.form-type-radio label, form.user-form .form-item.form-type-checkbox label, form.user-login-form .form-item.form-type-radio label, form.user-login-form .form-item.form-type-checkbox label, form.user-pass .form-item.form-type-radio label, form.user-pass .form-item.form-type-checkbox label, form.taxonomy-term-form .form-item.form-type-radio label, form.taxonomy-term-form .form-item.form-type-checkbox label { font-weight: 400; display: inline-block; }
+form.user-form .form-item.form-type-radio label, form.user-form .form-item.form-type-checkbox label, form.user-login-form .form-item.form-type-radio label, form.user-login-form .form-item.form-type-checkbox label, form.user-pass .form-item.form-type-radio label, form.user-pass .form-item.form-type-checkbox label, form.taxonomy-term-form .form-item.form-type-radio label, form.taxonomy-term-form .form-item.form-type-checkbox label, .media-form .form-item.form-type-radio label, .media-form .form-item.form-type-checkbox label { font-weight: 400; display: inline-block; }

@@ -1,0 +1,25 @@
+@media screen and (max-width: 1320px) { .views-element-container .views-field-field-media-image img { width: 100%; height: auto; } }
+
+.splide__slide { width: 100% !important; box-sizing: border-box; }
+
+@media screen and (max-width: 992px) { main > div { flex-wrap: wrap; }
+  main > div aside { flex-basis: 100%; }
+  main > div .layout-content { flex-basis: 100%; }
+  main > div .view-contenus-conteneur.display-id-block-3, main > div .view-contenus-conteneur.display-id-block-4, main > div .view-contenus-conteneur.display-id-block-6, main > div .view-contenus-conteneur.display-id-block-7 { display: flex; justify-content: space-around; gap: 1.5rem; }
+  main > div .view-contenus-conteneur.display-id-block-3 > div:first-child, main > div .view-contenus-conteneur.display-id-block-4 > div:first-child, main > div .view-contenus-conteneur.display-id-block-6 > div:first-child, main > div .view-contenus-conteneur.display-id-block-7 > div:first-child { display: none; }
+  header .header { gap: 1rem; align-items: center; }
+  header .header #block-interventions-democratiques-site-branding img { width: 100%; height: auto; }
+  header .header #block-interventions-democratiques-account-menu > ul li a { margin-left: 5px; line-height: 1em; }
+  .basdepage nav > ul { flex-wrap: wrap; }
+  .basdepage nav > ul li { padding: 10px 10px; } }
+
+@media screen and (max-width: 768px) { header .header { justify-content: center; flex-wrap: wrap; }
+  header .header #block-interventions-democratiques-site-branding img { width: 100%; height: auto; }
+  header .header #block-interventions-democratiques-account-menu > ul li a { margin-left: 5px; line-height: 1em; } }
+
+@media screen and (max-width: 540px) { main > div { flex-wrap: wrap; }
+  main > div aside { flex-basis: 100%; }
+  main > div .layout-content { flex-basis: 100%; }
+  main > div .view-contenus-conteneur.display-id-block-3, main > div .view-contenus-conteneur.display-id-block-4, main > div .view-contenus-conteneur.display-id-block-6, main > div .view-contenus-conteneur.display-id-block-7 { display: block; }
+  main > div .section_actualites { flex-direction: column; }
+  main > div .section_actualites .views-element-container { width: 100%; } }

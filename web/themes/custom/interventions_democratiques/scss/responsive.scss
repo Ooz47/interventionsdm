@@ -1,0 +1,106 @@
+@import "utilities";
+
+@media screen and (max-width: 1320px) {
+    .views-element-container .views-field-field-media-image img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.splide__slide {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+@media screen and (max-width: 992px) {
+    main > div {
+        flex-wrap: wrap;
+        aside {
+            flex-basis: 100%;
+        }
+        .layout-content {
+            flex-basis: 100%;
+        }
+        .view-contenus-conteneur {
+            &.display-id-block-3,
+            &.display-id-block-4,
+            &.display-id-block-6,
+            &.display-id-block-7 {
+                display: flex;
+                justify-content: space-around;
+                gap: 1.5rem;
+                > div:first-child {
+                    display: none;
+                }
+            }
+        }
+    }
+    header .header {
+        // flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        #block-interventions-democratiques-site-branding img {
+            width: 100%;
+            height: auto;
+        }
+        #block-interventions-democratiques-account-menu > ul li a {
+            margin-left: 5px;
+
+            line-height: 1em;
+        }
+    }
+    .basdepage nav > ul {
+        flex-wrap: wrap;
+        li {
+            padding: 10px 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header .header {
+        justify-content: center;
+        flex-wrap: wrap;
+
+        #block-interventions-democratiques-site-branding img {
+            width: 100%;
+            height: auto;
+        }
+        #block-interventions-democratiques-account-menu > ul li a {
+            margin-left: 5px;
+
+            line-height: 1em;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 540px) {
+    main > div {
+        flex-wrap: wrap;
+
+        aside {
+            flex-basis: 100%;
+        }
+        .layout-content {
+            flex-basis: 100%;
+        }
+
+        .view-contenus-conteneur {
+            &.display-id-block-3,
+            &.display-id-block-4,
+            &.display-id-block-6,
+            &.display-id-block-7 {
+                display: block;
+            }
+        }
+
+        .section_actualites {
+
+            flex-direction: column;
+            .views-element-container {
+        width: 100%;
+    }
+        }
+    }
+}

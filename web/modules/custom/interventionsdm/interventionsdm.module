@@ -244,7 +244,7 @@ if (in_array($form_id, $nodetype)) {
   $form['revision_information']['#access'] = FALSE;
   $form['relations']['#access'] = FALSE;
   // $form['simple_sitemap_index_now']['#access'] = FALSE;
-  // $form['status']['#access'] = TRUE;
+  // $form['author']['#access'] = FALSE;
 
   if (($form_id =="taxonomy_term_thematiques_form") || ($form_id =="taxonomy_term_categories_actualites_form")) {
     $form['status']['#access'] = FALSE;

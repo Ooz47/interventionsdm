@@ -175,36 +175,37 @@ form.user-pass
 }
 
 /*Page d'edition*/
-.node-form .form-item,
-.taxonomy-term-th-matiques-form .form-item,
-.taxonomy-term-r-gion-territoire-pays-form .form-item,
-.taxonomy-term-auteurs-form .form-item
- {
-    margin: 1rem 0;
-  }
-  .node-form .form-item > label,
-  .node-form .form-item legend {
-    margin-right: 1rem;
-    font-weight: 600;
-    display: block;
-  }
-  .node-form .form-item .description {
-    font-size: 0.8rem;
-  }
+// .node-form .form-item,
+// .taxonomy-term-th-matiques-form .form-item,
+// .taxonomy-term-r-gion-territoire-pays-form .form-item,
+// .taxonomy-term-auteurs-form .form-item,
+// .media-form
+//  {
+//     margin: 1rem 0;
+//   }
+//   .node-form .form-item > label,
+//   .node-form .form-item legend {
+//     margin-right: 1rem;
+//     font-weight: 600;
+//     display: block;
+//   }
+//   .node-form .form-item .description {
+//     font-size: 0.8rem;
+//   }
   
-  .node-form .form-item input {
-    padding: 5px;
-  }
+//   .node-form .form-item input {
+//     padding: 5px;
+//   }
   
-  .node-form .form-item.form-type-radio:not(.form-item-status-value),
-  .node-form .form-item.form-type-checkbox:not(.form-item-status-value) {
-    margin: 0;
-  }
-  .node-form .form-item.form-type-radio label,
-  .node-form .form-item.form-type-checkbox label {
-    font-weight: 400;
-    display: inline-block;
-  }
+//   .node-form .form-item.form-type-radio:not(.form-item-status-value),
+//   .node-form .form-item.form-type-checkbox:not(.form-item-status-value) {
+//     margin: 0;
+//   }
+//   .node-form .form-item.form-type-radio label,
+//   .node-form .form-item.form-type-checkbox label {
+//     font-weight: 400;
+//     display: inline-block;
+//   }
   
   .button[value="Retirer"] {
     /* background: #b93333; */
