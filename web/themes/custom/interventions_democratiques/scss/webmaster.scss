@@ -16,13 +16,35 @@ main > div .layout-content.node-edit
     flex-basis: 100%;
 
 }
-
-.field--type-text-with-summary {
+.tabledrag-toggle-weight-wrapper {
+  display: none;
+}
+.field--type-text-with-summary,
+.field--name-comment-body {
     .js-filter-wrapper {
        display: none;
     }
    }
 
+   #block-interventions-democratiques-primary-admin-actions {
+    margin: 1rem 0;
+   }
+  #block-interventions-democratiques-secondary-local-tasks > ul,
+   #block-interventions-democratiques-secondary-local-tasks > ul {
+     flex-direction: row;
+     align-items: flex-end;
+     width: auto;
+     margin: 0;
+     border: 0;
+     box-shadow: none;
+     display: flex;
+     padding: 0;
+   }
+   #block-interventions-democratiques-secondary-local-tasks,
+   #block-interventions-democratiques-secondary-local-tasks {
+     border-bottom: 1px #ccc solid;
+     margin: 1rem 0;
+   }
 .page-admin {
 
     table,
@@ -69,7 +91,7 @@ main > div .layout-content.node-edit
                 margin-right: 10px;
             }
         }
-        .views-form {
+        .views-form, form {
             #edit-header,
             .form-actions input#edit-submit {
                 display: none;
@@ -104,6 +126,9 @@ main > div .layout-content.node-edit
                         background: none;
                     }
                 }
+                .draggable .tabledrag-handle{
+                    // display: none;
+                }
             }
 
             .media-library-views-form__rows {
@@ -123,35 +148,31 @@ main > div .layout-content.node-edit
     }
 }
 
-
-/*Page user form*/
-
-form.user-form .form-item {
-    /* display: block; */
-    margin: 1rem 0;
+/*Page ajout utilisateur webmaster*/
+form.user-form,
+form.user-login-form,
+form.user-pass
+ {
+  .form-item {
+   &.form-type-textfield:has(input.username ) {
+     label {
+       display: none;
+     }
+    display: none;
+   }
+   &.form-type-password {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 3rem;
+    label {
+      flex-basis: 100%;
+    }
+   }
+   .password-suggestions {
+    display: none;
+   }
   }
-  form.user-form .form-item > label,
-  form.user-form .form-item legend {
-    font-weight: 600;
-    display: block;
-  }
-  form.user-form .form-item .description {
-    font-size: 0.8rem;
-  }
-  
-  form.user-form .form-item input {
-    padding: 5px;
-  }
-  
-  form.user-form .form-item.form-type-radio,
-  form.user-form .form-item.form-type-checkbox {
-    margin: 0;
-  }
-  form.user-form .form-item.form-type-radio label,
-  form.user-form .form-item.form-type-checkbox label {
-    font-weight: 400;
-    display: inline-block;
-  }
+}
 
 /*Page d'edition*/
 .node-form .form-item,
@@ -374,22 +395,7 @@ form.user-form .form-item {
     content: "";
   }
   
-  body.admincontentmedia-grid #block-interventions-democratiques-secondary-local-tasks > ul,
-  body.admincontentmedia #block-interventions-democratiques-secondary-local-tasks > ul {
-    flex-direction: row;
-    align-items: flex-end;
-    width: auto;
-    margin: 0;
-    border: 0;
-    box-shadow: none;
-    display: flex;
-    padding: 0;
-  }
-  body.admincontentmedia-grid #block-interventions-democratiques-secondary-local-tasks,
-  body.admincontentmedia #block-interventions-democratiques-secondary-local-tasks {
-    border-bottom: 1px #ccc solid;
-    margin: 1rem 0;
-  }
+
   
   .media-library-select-all {
     /* flex-basis: 100%;

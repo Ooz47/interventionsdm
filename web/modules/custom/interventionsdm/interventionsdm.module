@@ -6,7 +6,11 @@ use Kint\Kint as KintKint;
 use Drupal\Core\Url;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\media\Entity\Media;
+use Drupal\node\NodeInterface;
+use Drupal\views\ViewExecutable;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**
@@ -79,28 +83,35 @@ function interventionsdm_menu_local_tasks_alter(
   if (!in_array('webmaster', $current_user->getRoles())) {
     return;
   }
-
+// Kint($route_name);
   // Onglets à retirer pour les webmasters, selon le contexte de page
   $tabs_to_remove = [
     'entity.taxonomy_vocabulary.overview_form',
-    // 'entity.taxonomy_vocabulary.edit_form',
-    // 'entity.taxonomy_vocabulary.fields',
-    // 'entity.taxonomy_vocabulary.field_ui',
+    'entity.user.contact_form',
+    'entity.version_history:taxonomy_term.version_history',
+    'entity.node.version_history',
   ];
+  // Kint($data);
+// Parcours de tous les onglets de niveau 0 et 1
+foreach ($data['tabs'][0] ?? [] as $key => $tab) {
+  
+ 
+  if (in_array($key, $tabs_to_remove)) {
+    // dsm ('yes');
+    // dsm ($key);
+    unset($data['tabs'][0][$key]);
+  }
+}
 
-  // Si on est sur l’un des écrans de vocabulaire
-  if (in_array($route_name, $tabs_to_remove)) {
-    // Supprime les tabs secondaires pour cette route
-    if (isset($data['tabs'][0])) {
-      unset($data['tabs'][0]);
-    }
-    if (isset($data['tabs'][1])) {
-      unset($data['tabs'][1]);
-    }
+foreach ($data['tabs'][1] ?? [] as $key => $tab) {
+  if (in_array($key, $tabs_to_remove)) {
+    unset($data['tabs'][0][$key]);
+  }
+}
 
     // Ajoute une dépendance au contexte utilisateur pour invalider le cache
     $cacheability->addCacheContexts(['user.roles']);
-  }
+
 }
 
   
@@ -184,7 +195,7 @@ function interventionsdm_form_alter(&$form, FormStateInterface $form_state, $for
   "node_page_form", "node_page_edit_form",
   "node_revue_de_presse_form", "node_revue_de_presse_edit_form"
 );
-Kint($form);
+// Kint($form_id);
 if (in_array($form_id, $nodetype)) {
   $form['revision']['#access'] = FALSE;
   $form['revision_log']['#access'] = FALSE;
@@ -198,15 +209,23 @@ if (in_array($form_id, $nodetype)) {
   $form['comment_node_documents']['#access'] = FALSE;
 }
 
-if (($form_id == 'node_abecedaire_form') || ($form_id == 'node_page_form')) {
-	  
+$nodetype = array(
+  "comment_comment_node_abecedaire_form", "node_abecedaire_edit_form",
+  "comment_comment_node_article_form", "node_actualit__edit_form",
+  "comment_comment_node_article_form", "node_article_edit_form",
+  "comment_comment_node_documents_form", "node_documents_edit_form",
+  "comment_comment_node_notes_de_lectures_form", "node_notes_de_lectures_edit_form",
+  "node_abecedaire_form", "node_page_form"
+);
 
+	  
+if (in_array($form_id, $nodetype)) {
   if (!$current_user->hasRole('administrator')){
     $form['author']['#access'] = FALSE;	
   }
      }
 
-     Kint($form_id);
+    //  Kint($form_id);
 $nodetype = array(
  "taxonomy_term_auteurs_form",
  "taxonomy_term_r_gion_territoire_pays_form",
@@ -232,3 +251,100 @@ if (in_array($form_id, $nodetype)) {
   }
 }
 } //FORM_ALTER
+
+
+/*Remplace image texte invit�s dans page cible*/
+function interventionsdm_preprocess_field(&$variables, $hook) {
+  $element = $variables['element'];
+
+  // On cible uniquement le champ image du type "article"
+  if (
+    isset($element['#field_name']) &&
+    $element['#field_name'] === 'field_media_image' &&
+    $element['#bundle'] === 'article'
+  ) {
+    $node = $element['#object'];
+
+    if ($node instanceof NodeInterface && $node->hasField('field_auteur')) {
+      $term = $node->get('field_auteur')->first();
+      
+      if ($term && $term->target_id != 9) {
+        // On remplace l'entité média par une autre (ex: ID 208)
+        $new_media = Media::load(208);
+        // Kint($variables['items'][0] );
+        if ($new_media) {
+          // On remplace l'élément affiché (dans #item) par celui du média cible
+          // Kint($new_media );
+          $variables['items'][0]['content']['#media'] = $new_media;
+          // $variables['items'][0]['#item'] = $new_media->get('field_media_image')->first()->getValue();
+          // $variables['items'][0]['#theme'] = 'image'; // ou 'media' selon ton render
+        }
+      }
+    }
+  }
+}
+
+
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function interventionsdm_views_pre_render(ViewExecutable $view): void {
+  if (
+    $view->id() === 'contenus' &&
+    in_array($view->current_display, ['page_2', 'block_4', 'block_1', 'page_7'])
+  ) {
+    foreach ($view->result as $row) {
+      /** @var \Drupal\node\Entity\Node $node */
+      $node = $row->_entity;
+
+      if ($node instanceof \Drupal\node\NodeInterface && $node->bundle() === 'article') {
+        // Vérifie si l'auteur est différent de 9
+        if (
+          $node->hasField('field_auteur') &&
+          !$node->get('field_auteur')->isEmpty() &&
+          $node->get('field_auteur')->first()->target_id != 9
+        ) {
+          // On remplace le média image
+          $replacement_media = Media::load(208);
+          if ($replacement_media && $replacement_media->hasField('field_media_image')) {
+              $node->field_media_image->setValue([
+                'target_id' => $replacement_media->id(),
+              ]);
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function interventionsdm_entity_operation_alter(array &$operations, EntityInterface $entity): void {
+  $current_user = \Drupal::currentUser();
+
+  // On ne cible que les utilisateurs avec le rôle "webmaster"
+  if (!in_array('webmaster', $current_user->getRoles())) {
+    return;
+  }
+
+  $entity_type = $entity->getEntityTypeId();
+
+  // Suppression des actions sur les vocabulaires
+  if ($entity_type === 'taxonomy_vocabulary') {
+    unset($operations['edit'], $operations['delete']);
+  }
+
+  // Suppression des actions sur les termes
+  if ($entity_type === 'taxonomy_term') {
+    // Supprime "Ajouter un enfant" pour tous les termes
+    unset($operations['add-child']);
+
+    // Supprime "Supprimer" uniquement pour certains vocabulaires
+    $restricted_vocabularies = ['r_gion_territoire_pays', 'th_matiques'];
+    if (in_array($entity->bundle(), $restricted_vocabularies)) {
+      unset($operations['delete']);
+    }
+  }
+}

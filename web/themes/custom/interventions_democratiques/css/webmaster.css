@@ -2,7 +2,15 @@ body::after { content: "WEBMASTER MODE"; position: fixed; bottom: 0; right: 0; b
 
 main > div .layout-content.node-edit { flex-basis: 100%; }
 
-.field--type-text-with-summary .js-filter-wrapper { display: none; }
+.tabledrag-toggle-weight-wrapper { display: none; }
+
+.field--type-text-with-summary .js-filter-wrapper, .field--name-comment-body .js-filter-wrapper { display: none; }
+
+#block-interventions-democratiques-primary-admin-actions { margin: 1rem 0; }
+
+#block-interventions-democratiques-secondary-local-tasks > ul, #block-interventions-democratiques-secondary-local-tasks > ul { flex-direction: row; align-items: flex-end; width: auto; margin: 0; border: 0; box-shadow: none; display: flex; padding: 0; }
+
+#block-interventions-democratiques-secondary-local-tasks, #block-interventions-democratiques-secondary-local-tasks { border-bottom: 1px #ccc solid; margin: 1rem 0; }
 
 .page-admin table, .page-admin .action-links { width: 100%; }
 
@@ -24,40 +32,38 @@ main > div .layout-content.node-edit { flex-basis: 100%; }
 
 .page-admin main > div .layout-content .views-exposed-form label { margin-right: 10px; }
 
-.page-admin main > div .layout-content .views-form #edit-header, .page-admin main > div .layout-content .views-form .form-actions input#edit-submit { display: none; }
+.page-admin main > div .layout-content .views-form #edit-header, .page-admin main > div .layout-content .views-form .form-actions input#edit-submit, .page-admin main > div .layout-content form #edit-header, .page-admin main > div .layout-content form .form-actions input#edit-submit { display: none; }
 
-.page-admin main > div .layout-content .views-form table { border: 1px solid #e2e2e2; }
+.page-admin main > div .layout-content .views-form table, .page-admin main > div .layout-content form table { border: 1px solid #e2e2e2; }
 
-.page-admin main > div .layout-content .views-form table thead { background: #cf1322; color: #ffffff !important; }
+.page-admin main > div .layout-content .views-form table thead, .page-admin main > div .layout-content form table thead { background: #cf1322; color: #ffffff !important; }
 
-.page-admin main > div .layout-content .views-form table thead a { color: #ffffff !important; }
+.page-admin main > div .layout-content .views-form table thead a, .page-admin main > div .layout-content form table thead a { color: #ffffff !important; }
 
-.page-admin main > div .layout-content .views-form table tbody td { padding: 2px 13px; }
+.page-admin main > div .layout-content .views-form table tbody td, .page-admin main > div .layout-content form table tbody td { padding: 2px 13px; }
 
-.page-admin main > div .layout-content .views-form table tbody td.views-field-node-bulk-form { padding: 0; }
+.page-admin main > div .layout-content .views-form table tbody td.views-field-node-bulk-form, .page-admin main > div .layout-content form table tbody td.views-field-node-bulk-form { padding: 0; }
 
-.page-admin main > div .layout-content .views-form table .views-field-title a { font-size: 1.1rem !important; }
+.page-admin main > div .layout-content .views-form table .views-field-title a, .page-admin main > div .layout-content form table .views-field-title a { font-size: 1.1rem !important; }
 
-.page-admin main > div .layout-content .views-form table .views-field-type { font-size: 13px; }
+.page-admin main > div .layout-content .views-form table .views-field-type, .page-admin main > div .layout-content form table .views-field-type { font-size: 13px; }
 
-.page-admin main > div .layout-content .views-form table .views-field-type a { background: none; }
+.page-admin main > div .layout-content .views-form table .views-field-type a, .page-admin main > div .layout-content form table .views-field-type a { background: none; }
 
-.page-admin main > div .layout-content .views-form .media-library-views-form__rows .views-row { width: 16%; }
+.page-admin main > div .layout-content .views-form .media-library-views-form__rows .views-row, .page-admin main > div .layout-content form .media-library-views-form__rows .views-row { width: 16%; }
 
 .page-admin #block-interventions-democratiques-primary-admin-actions a { background: none; color: #cf1322; font-weight: bold; text-decoration: none; }
 
-/*Page user form*/
-form.user-form .form-item { /* display: block; */ margin: 1rem 0; }
+/*Page ajout utilisateur webmaster*/
+form.user-form .form-item.form-type-textfield:has(input.username), form.user-login-form .form-item.form-type-textfield:has(input.username), form.user-pass .form-item.form-type-textfield:has(input.username) { display: none; }
 
-form.user-form .form-item > label, form.user-form .form-item legend { font-weight: 600; display: block; }
+form.user-form .form-item.form-type-textfield:has(input.username) label, form.user-login-form .form-item.form-type-textfield:has(input.username) label, form.user-pass .form-item.form-type-textfield:has(input.username) label { display: none; }
 
-form.user-form .form-item .description { font-size: 0.8rem; }
+form.user-form .form-item.form-type-password, form.user-login-form .form-item.form-type-password, form.user-pass .form-item.form-type-password { display: flex; flex-wrap: wrap; column-gap: 3rem; }
 
-form.user-form .form-item input { padding: 5px; }
+form.user-form .form-item.form-type-password label, form.user-login-form .form-item.form-type-password label, form.user-pass .form-item.form-type-password label { flex-basis: 100%; }
 
-form.user-form .form-item.form-type-radio, form.user-form .form-item.form-type-checkbox { margin: 0; }
-
-form.user-form .form-item.form-type-radio label, form.user-form .form-item.form-type-checkbox label { font-weight: 400; display: inline-block; }
+form.user-form .form-item .password-suggestions, form.user-login-form .form-item .password-suggestions, form.user-pass .form-item .password-suggestions { display: none; }
 
 /*Page d'edition*/
 .node-form .form-item, .taxonomy-term-th-matiques-form .form-item, .taxonomy-term-r-gion-territoire-pays-form .form-item, .taxonomy-term-auteurs-form .form-item { margin: 1rem 0; }
@@ -103,10 +109,6 @@ form.user-form .form-item.form-type-radio label, form.user-form .form-item.form-
 .tabs__tab a { padding-right: 2rem; padding-left: 2rem; border-radius: 2px 2px 0 0; position: relative; display: flex; overflow: hidden; flex-grow: 1; align-items: center; box-sizing: border-box; min-height: 3rem; padding: 0.75rem 1.5rem; -webkit-text-decoration: none; text-decoration: none; color: #55565b; line-height: 1.2rem; }
 
 .tabs__tab a.is-active::before { top: auto; right: 0; bottom: 0; left: 0; width: 100%; /* height: var(--tabs--active-height); */ height: 0.1875rem; border-right: none; border-bottom: 0.1875rem solid #f5d0d3; border-left: none; position: absolute; display: block; content: ""; }
-
-body.admincontentmedia-grid #block-interventions-democratiques-secondary-local-tasks > ul, body.admincontentmedia #block-interventions-democratiques-secondary-local-tasks > ul { flex-direction: row; align-items: flex-end; width: auto; margin: 0; border: 0; box-shadow: none; display: flex; padding: 0; }
-
-body.admincontentmedia-grid #block-interventions-democratiques-secondary-local-tasks, body.admincontentmedia #block-interventions-democratiques-secondary-local-tasks { border-bottom: 1px #ccc solid; margin: 1rem 0; }
 
 .media-library-select-all { /* flex-basis: 100%; width: 100%; margin: 0.625rem 0.5rem; */ display: none; }
 

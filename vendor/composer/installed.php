@@ -3,7 +3,7 @@
         'name' => 'drupal/recommended-project',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '74e2025662959eee736ddee62fe1f5bafd5212ac',
+        'reference' => 'faeffada7fa0772e2ffd49b2994ea7c6a84815bf',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -433,6 +433,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/email_registration' => array(
+            'pretty_version' => '2.0.0-rc8',
+            'version' => '2.0.0.0-RC8',
+            'reference' => '2.0.0-rc8',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/email_registration',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/entity' => array(
             'pretty_version' => '1.6.0',
             'version' => '1.6.0.0',
@@ -607,7 +616,7 @@
         'drupal/recommended-project' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '74e2025662959eee736ddee62fe1f5bafd5212ac',
+            'reference' => 'faeffada7fa0772e2ffd49b2994ea7c6a84815bf',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

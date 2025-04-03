@@ -66,11 +66,13 @@
 #block-interventions-democratiques-views-block-contenus-block-2 .views-field-field-media-image, .textes-cla .views-field-field-media-image, .textes-invites .views-field-field-media-image, .notes-lecture .views-field-field-media-image, .vue-documents .views-field-field-media-image, .vue-actualites .views-field-field-media-image, .vue-revue-presse .views-field-field-media-image, .vue-chronologie .views-field-field-media-image, .vue-taxonomy-term .views-field-field-media-image { float: left; max-width: 260px; margin: 0 20px 10px 0; }
 
 /*Contenu page complete*/
+.page-node .content { /*COMMENTAIRES*/ }
+
 .page-node .content article { margin-bottom: 25px; }
 
 .page-node .content .image-media { float: right; margin-left: 20px; border: 1px solid #efefef; padding: 3px; }
 
-.page-node .content .field-thematique, .page-node .content .field-region, .page-node .content .field-auteur { font-size: 12px; font-size: 0.75rem; margin-bottom: 5px; text-transform: none; color: #424242; }
+.page-node .content .field-thematique, .page-node .content .field-region, .page-node .content .field-auteur { font-size: 12px; font-size: 0.75rem; margin-bottom: 5px; text-transform: none; color: #424242; display: inline-block; }
 
 .page-node .content .field-thematique a, .page-node .content .field-region a, .page-node .content .field-auteur a { color: #cf1322; font-weight: 700; line-height: 1.5em; padding: 1px 4px; min-height: 18px; /*color: #fff;*/ text-align: center; background: #f5d0d3; text-decoration: none; border-radius: 5px; letter-spacing: 1px; }
 
@@ -104,29 +106,31 @@
 
 .page-node .content .field-comments { clear: both; /* padding: 20px 20px 10px; */ padding: 1.25rem 1.25rem 0.625rem; margin-bottom: 30px; margin-bottom: 1.875rem; background: #efefef; }
 
-.page-node .content .field-comments .comment { padding: 20px 20px 10px 20px; margin-bottom: 20px; border-bottom: 2px solid #cf1322; background: #fff; }
+.page-node .content .field-comments header article { padding: 0; margin-bottom: 0; border-bottom: 0px solid #cf1322; background: #fff; }
 
-.page-node .content .field-comments .comment p { margin: 0; }
+.page-node .content .field-comments article { padding: 20px 20px 10px 20px; margin-bottom: 20px; border-bottom: 2px solid #f5d0d3; background: #fff; }
 
-.page-node .content .field-comments .comment.comment-unpublished { background: #e8e8e8; }
+.page-node .content .field-comments article p { margin: 0; }
 
-.page-node .content .field-comments .comment.comment-unpublished .unpublished { clear: both; font-size: 46px; }
+.page-node .content .field-comments article .submitted { font-weight: bold; margin-bottom: 20px; }
 
-.page-node .content .field-comments .comment .submitted { font-weight: bold; margin-bottom: 20px; margin-bottom: 1.25rem; float: left; }
+.page-node .content .field-comments article .submitted a { color: #1f1e1e; text-decoration: none; }
 
-.page-node .content .field-comments .comment .comment-actions { float: right; }
+.page-node .content .field-comments article ul.links.inline { display: flex; justify-content: flex-end; gap: 1rem; list-style-type: none; position: absolute; top: 5px; right: 10px; }
 
-.page-node .content .field-comments .comment .comment-actions a { font-size: 0.8em; color: #424242; font-weight: 400; line-height: 1.5em; padding: 1px 4px; min-height: 18px; /* color: #fff; */ text-align: center; background: #efefef; text-decoration: none; border-radius: 5px; letter-spacing: 1px; }
+.page-node .content .field-comments article ul.links.inline a { font-size: 0.8em; color: #424242; font-weight: 400; line-height: 1.5em; padding: 1px 4px; min-height: 18px; /* color: #fff; */ text-align: center; background: #efefef; text-decoration: none; border-radius: 5px; letter-spacing: 1px; }
 
-.page-node .content .field-comments .comment .comment-actions a:hover { color: #ffffff; background: #cf1322; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; /**/ }
+.page-node .content .field-comments article ul.links.inline a:hover { color: #ffffff; background: #cf1322; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; /**/ }
 
-.page-node .content .field-comments .comment.last { margin-bottom: 30px; }
+.page-node .content .field-comments article.last { margin-bottom: 30px; }
 
-.page-node .content .field-comments .comment .field-name-comment-body { clear: both; }
+.page-node .content .field-comments article.unpublished { background: #e8e8e8; }
 
-.page-node .content .field-comments .indented .comment { background: #fcfcfc; }
+.page-node .content .field-comments article.unpublished .markunpublished { display: block; height: 0; overflow: visible; background-color: transparent; color: #d8d8d885; font-size: 75px; line-height: 1; font-family: Impact,"Arial Narrow",Helvetica,sans-serif; font-weight: bold; text-transform: uppercase; text-align: center; word-wrap: break-word; position: absolute; top: 25%; left: 25%; }
 
-.page-node .content .field-comments a.username { color: #1f1e1e; text-decoration: none; }
+.page-node .content .field-comments .indented { display: flex; justify-content: flex-end; }
+
+.page-node .content .field-comments .indented article { background: #fcfcfc; width: 90%; }
 
 .addtoany_list { display: block; float: right; line-height: 16px; margin: 0px 0 10px; }
 
@@ -179,7 +183,7 @@ footer a { color: #eeeff1; }
 
 #search-block-form input[type="submit"] { margin-left: 5px; }
 
-input[type="submit"], .comment-add a, .comment_forbidden a { color: #fff; padding: 5px 8px; cursor: pointer; background: #cf1322; display: inline-block; border: 0; -webkit-appearance: none; -webkit-border-radius: 0; border-radius: 0; text-decoration: none; font-weight: 600; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; }
+input[type="submit"], .comment-add a, .comment_forbidden a { color: #fff; padding: 5px 8px; cursor: pointer; background: #cf1322; display: inline-block; border: 0; -webkit-appearance: none; -webkit-border-radius: 0; border-radius: 0; text-decoration: none; font-weight: 600; text-transform: uppercase; margin: 10px 10px 0 0; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; }
 
 input[type="submit"]:hover, .comment-add a:hover, .comment_forbidden a:hover { background: #2f2f2f; -webkit-transition: background 0.2s ease-out; -moz-transition: background 0.2s ease-out; -o-transition: background 0.2s ease-out; transition: background 0.2s ease-out; color: #fff; border: 0; }
 
@@ -192,3 +196,16 @@ input[type="submit"]:hover, .comment-add a:hover, .comment_forbidden a:hover { b
 #user-login-form .form-item label, #user-login-form #edit-actions label { margin-right: 20px; }
 
 #user-login-form .form-item input, #user-login-form #edit-actions input { padding: 5px 5px; }
+
+/*Page user form*/
+form.user-form .form-item, form.user-login-form .form-item, form.user-pass .form-item, form.taxonomy-term-form .form-item { margin: 1rem 0; }
+
+form.user-form .form-item > label, form.user-form .form-item legend, form.user-login-form .form-item > label, form.user-login-form .form-item legend, form.user-pass .form-item > label, form.user-pass .form-item legend, form.taxonomy-term-form .form-item > label, form.taxonomy-term-form .form-item legend { font-weight: 600; display: block; }
+
+form.user-form .form-item .description, form.user-login-form .form-item .description, form.user-pass .form-item .description, form.taxonomy-term-form .form-item .description { font-size: 0.8rem; }
+
+form.user-form .form-item input, form.user-login-form .form-item input, form.user-pass .form-item input, form.taxonomy-term-form .form-item input { padding: 5px; }
+
+form.user-form .form-item.form-type-radio, form.user-form .form-item.form-type-checkbox, form.user-login-form .form-item.form-type-radio, form.user-login-form .form-item.form-type-checkbox, form.user-pass .form-item.form-type-radio, form.user-pass .form-item.form-type-checkbox, form.taxonomy-term-form .form-item.form-type-radio, form.taxonomy-term-form .form-item.form-type-checkbox { margin: 0; }
+
+form.user-form .form-item.form-type-radio label, form.user-form .form-item.form-type-checkbox label, form.user-login-form .form-item.form-type-radio label, form.user-login-form .form-item.form-type-checkbox label, form.user-pass .form-item.form-type-radio label, form.user-pass .form-item.form-type-checkbox label, form.taxonomy-term-form .form-item.form-type-radio label, form.taxonomy-term-form .form-item.form-type-checkbox label { font-weight: 400; display: inline-block; }

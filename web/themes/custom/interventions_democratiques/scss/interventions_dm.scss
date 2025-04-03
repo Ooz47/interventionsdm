@@ -264,7 +264,7 @@
       margin-bottom: 5px;
       text-transform: none;
       color: $grisfonce;
-      // display: inline-block;
+      display: inline-block;
       a {
         color: $rougeprimaire;
         font-weight: 700;
@@ -366,6 +366,7 @@
       display: block;
       padding-top: 15px;
     }
+/*COMMENTAIRES*/
 
     .field-comments {
       clear: both;
@@ -374,30 +375,46 @@
       margin-bottom: 30px;
       margin-bottom: 1.875rem;
       background: #efefef;
-
-      .comment {
+      header article{
+        padding: 0;
+        margin-bottom: 0;
+        border-bottom: 0px solid $rougeprimaire;
+        background: #fff;
+      }
+      article {
         padding: 20px 20px 10px 20px;
         margin-bottom: 20px;
-        border-bottom: 2px solid $rougeprimaire;
+        border-bottom: 2px solid $rougepale;
         background: #fff;
         p {
           margin: 0;
         }
-        &.comment-unpublished {
-          background: #e8e8e8;
-          .unpublished {
-            clear: both;
-            font-size: 46px;
-          }
-        }
+        // &.comment-unpublished {
+        //   background: #e8e8e8;
+        //   .unpublished {
+        //     clear: both;
+        //     font-size: 46px;
+        //   }
+        // }
         .submitted {
           font-weight: bold;
           margin-bottom: 20px;
-          margin-bottom: 1.25rem;
-          float: left;
+          // margin-bottom: 1.25rem;
+          // float: left;
+          a {
+            color: $noir;
+            text-decoration: none;
+          }
         }
-        .comment-actions {
-          float: right;
+        ul.links.inline {
+          // float: right;
+          display: flex          ;
+              justify-content: flex-end;
+              gap: 1rem;
+              list-style-type: none;
+              position: absolute;
+              top: 5px;
+              right: 10px;
           a {
             font-size: 0.8em;
             color: #424242;
@@ -423,19 +440,42 @@
           margin-bottom: 30px;
         }
 
-        .field-name-comment-body {
-          clear: both;
-        }
+        // .field-name-comment-body {
+        //   clear: both;
+        // }
+        &.unpublished{
+          background: #e8e8e8;
+      .markunpublished{
+              display: block;
+              height: 0;
+              overflow:
+            visible;
+              background-color: transparent;
+              color: #d8d8d885;
+              font-size: 75px;
+              line-height: 1;
+              font-family: Impact,"Arial Narrow",Helvetica,sans-serif;
+              font-weight: bold;
+              text-transform: uppercase;
+              text-align: center;
+              word-wrap:            break-word;
+              position: absolute;
+  top: 25%;
+  left: 25%;
+            
+      }
+    }
+
       }
       .indented {
-        .comment {
+        display: flex        ;
+            justify-content: flex-end;
+        article {
           background: #fcfcfc;
+          width: 90%;
         }
       }
-      a.username {
-        color: $noir;
-        text-decoration: none;
-      }
+
     }
 
     // }
@@ -595,7 +635,8 @@ input[type="submit"],
   border-radius: 0;
   text-decoration: none;
   font-weight: 600;
-
+  text-transform: uppercase;
+  margin: 10px 10px 0 0;
   @include transition(background, 0.2s, ease-out);
 
   &:hover {
@@ -630,3 +671,69 @@ color:$rougeprimaire;
   }
 }
 }
+
+
+
+/*Page user form*/
+
+// form.user-form .form-item {
+//   /* display: block; */
+//   margin: 1rem 0;
+// }
+// form.user-form .form-item > label,
+// form.user-form .form-item legend {
+//   font-weight: 600;
+//   display: block;
+// }
+// form.user-form .form-item .description {
+//   font-size: 0.8rem;
+// }
+
+// form.user-form .form-item input {
+//   padding: 5px;
+// }
+
+// form.user-form .form-item.form-type-radio,
+// form.user-form .form-item.form-type-checkbox {
+//   margin: 0;
+// }
+// form.user-form .form-item.form-type-radio label,
+// form.user-form .form-item.form-type-checkbox label {
+//   font-weight: 400;
+//   display: inline-block;
+// }
+
+form.user-form,
+form.user-login-form,
+form.user-pass,
+form.taxonomy-term-form
+ {
+  .form-item {
+    margin: 1rem 0;
+
+    > label,
+    legend {
+      font-weight: 600;
+      display: block;
+    }
+
+    .description {
+      font-size: 0.8rem;
+    }
+
+    input {
+      padding: 5px;
+    }
+
+    &.form-type-radio,
+    &.form-type-checkbox {
+      margin: 0;
+
+      label {
+        font-weight: 400;
+        display: inline-block;
+      }
+    }
+  }
+}
+

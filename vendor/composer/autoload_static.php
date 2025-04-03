@@ -136,6 +136,7 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
         'D' => 
         array (
             'Drush\\' => 6,
+            'Drupal\\email_registration\\Component\\' => 36,
             'Drupal\\Core\\' => 12,
             'Drupal\\Composer\\Plugin\\Scaffold\\' => 32,
             'Drupal\\Composer\\Plugin\\ProjectMessage\\' => 38,
@@ -417,6 +418,10 @@ class ComposerStaticInite49a4858f977ed5788490498f5d800d4
         'Drush\\' => 
         array (
             0 => __DIR__ . '/..' . '/drush/drush/src',
+        ),
+        'Drupal\\email_registration\\Component\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/web/modules/contrib/email_registration/lib',
         ),
         'Drupal\\Core\\' => 
         array (
