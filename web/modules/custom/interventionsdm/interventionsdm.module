@@ -1,4 +1,5 @@
 <?php
+
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Menu\MenuLinkManagerInterface;
 use Drupal\devel\Plugin\Devel\Dumper\Kint;
@@ -22,50 +23,52 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 /**
  * Implémente hook_menu_links_discovered_alter().
  */
-function interventionsdm_menu_links_discovered_alter(&$links) {
-    // Détermine les chemins de menu à masquer pour les webmasters.
-    $paths_to_hide = [
-      'system.admin_index',
-      'entity.taxonomy_vocabulary.add_form',
-      'entity.taxonomy_vocabulary.edit_form',
-      'entity.taxonomy_vocabulary.delete_form',
-      // Ajoute ici d'autres liens internes (route names), pas les paths bruts.
-    ];
+function interventionsdm_menu_links_discovered_alter(&$links)
+{
+  // Détermine les chemins de menu à masquer pour les webmasters.
+  $paths_to_hide = [
+    'system.admin_index',
+    'entity.taxonomy_vocabulary.add_form',
+    'entity.taxonomy_vocabulary.edit_form',
+    'entity.taxonomy_vocabulary.delete_form',
+    // Ajoute ici d'autres liens internes (route names), pas les paths bruts.
+  ];
 
-    
-    $current_user = \Drupal::currentUser();
-    // kint_dump($current_user);
-    // kint_dump($current_user->getRoles());
-    // Si l'utilisateur est connecté et a le rôle 'webmaster'.
-    if ($current_user->isAuthenticated() && in_array('webmaster', $current_user->getRoles())) {
-      foreach ($paths_to_hide as $route_name) {
-        foreach ($links as $key => $link) {
-          if ((isset($link['route_name'])) && ($link['route_name'] === $route_name)) {
-            // Supprime le lien du menu.
-            unset($links[$key]);
-          }
+
+  $current_user = \Drupal::currentUser();
+  // kint_dump($current_user);
+  // kint_dump($current_user->getRoles());
+  // Si l'utilisateur est connecté et a le rôle 'webmaster'.
+  if ($current_user->isAuthenticated() && in_array('webmaster', $current_user->getRoles())) {
+    foreach ($paths_to_hide as $route_name) {
+      foreach ($links as $key => $link) {
+        if ((isset($link['route_name'])) && ($link['route_name'] === $route_name)) {
+          // Supprime le lien du menu.
+          unset($links[$key]);
         }
       }
     }
   }
+}
 
-  function interventionsdm_page_attachments(array &$attachments) {
-    
-    $current_user = \Drupal::currentUser();
-    // dsm($current_user);
-    // kint("paths_to_hide");
-    if (in_array('webmaster', $current_user->getRoles())) {
-      $route_name = \Drupal::routeMatch()->getRouteName();
-      $attachments['#attached']['html_head'][] = [
-        [
-          '#tag' => 'script',
-          '#value' => "console.log('ROUTE: $route_name');",
-        ],
-        'interventionsdm_debug_route'
-      ];
-    }
+function interventionsdm_page_attachments(array &$attachments)
+{
+
+  $current_user = \Drupal::currentUser();
+  // dsm($current_user);
+  // kint("paths_to_hide");
+  if (in_array('webmaster', $current_user->getRoles())) {
+    $route_name = \Drupal::routeMatch()->getRouteName();
+    $attachments['#attached']['html_head'][] = [
+      [
+        '#tag' => 'script',
+        '#value' => "console.log('ROUTE: $route_name');",
+      ],
+      'interventionsdm_debug_route'
+    ];
   }
-  
+}
+
 
 
 
@@ -83,7 +86,7 @@ function interventionsdm_menu_local_tasks_alter(
   if (!in_array('webmaster', $current_user->getRoles())) {
     return;
   }
-// Kint($route_name);
+  // Kint($route_name);
   // Onglets à retirer pour les webmasters, selon le contexte de page
   $tabs_to_remove = [
     'entity.taxonomy_vocabulary.overview_form',
@@ -92,44 +95,43 @@ function interventionsdm_menu_local_tasks_alter(
     'entity.node.version_history',
   ];
   // Kint($data);
-// Parcours de tous les onglets de niveau 0 et 1
-foreach ($data['tabs'][0] ?? [] as $key => $tab) {
-  
- 
-  if (in_array($key, $tabs_to_remove)) {
-    // dsm ('yes');
-    // dsm ($key);
-    unset($data['tabs'][0][$key]);
-  }
-}
+  // Parcours de tous les onglets de niveau 0 et 1
+  foreach ($data['tabs'][0] ?? [] as $key => $tab) {
 
-foreach ($data['tabs'][1] ?? [] as $key => $tab) {
-  if (in_array($key, $tabs_to_remove)) {
-    unset($data['tabs'][0][$key]);
-  }
-}
 
-    // Ajoute une dépendance au contexte utilisateur pour invalider le cache
-    $cacheability->addCacheContexts(['user.roles']);
-
-}
-
-  
-function interventionsdm_menu_local_actions_alter(&$local_actions) {
-
-    $current_user = \Drupal::currentUser();
-
-    // Si l'utilisateur a le rôle "webmaster", on supprime l'action ciblée.
-    if (in_array('webmaster', $current_user->getRoles())) {
-      // Identifiant du lien d'action "Ajouter un vocabulaire"
-      $action_key = 'entity.taxonomy_vocabulary.add_form';
-  
-      // Supprime le lien s’il existe
-      if (isset($local_actions[$action_key])) {
-        unset($local_actions[$action_key]);
-
-      }
+    if (in_array($key, $tabs_to_remove)) {
+      // dsm ('yes');
+      // dsm ($key);
+      unset($data['tabs'][0][$key]);
     }
+  }
+
+  foreach ($data['tabs'][1] ?? [] as $key => $tab) {
+    if (in_array($key, $tabs_to_remove)) {
+      unset($data['tabs'][0][$key]);
+    }
+  }
+
+  // Ajoute une dépendance au contexte utilisateur pour invalider le cache
+  $cacheability->addCacheContexts(['user.roles']);
+}
+
+
+function interventionsdm_menu_local_actions_alter(&$local_actions)
+{
+
+  $current_user = \Drupal::currentUser();
+
+  // Si l'utilisateur a le rôle "webmaster", on supprime l'action ciblée.
+  if (in_array('webmaster', $current_user->getRoles())) {
+    // Identifiant du lien d'action "Ajouter un vocabulaire"
+    $action_key = 'entity.taxonomy_vocabulary.add_form';
+
+    // Supprime le lien s’il existe
+    if (isset($local_actions[$action_key])) {
+      unset($local_actions[$action_key]);
+    }
+  }
 }
 
 
@@ -163,16 +165,16 @@ function interventionsdm_form_alter(&$form, FormStateInterface $form_state, $for
   //  dsm($form);
   //  Kint($current_user);
   if (($form_id === 'user_form') || ($form_id === 'user_register_form')) {
-   
+
     if (($current_user->hasRole('administrator')) || ($current_user->id() == '1')) {
 
       return;
     } else {
       if (($current_user->hasRole('webmaster'))) {
         if ($form_id === 'user_form') {
-        
+
           $user = $form_state->getFormObject()->getEntity();
-        
+
           if ($user->hasRole('administrator')) {
             throw new AccessDeniedHttpException();
           }
@@ -181,80 +183,99 @@ function interventionsdm_form_alter(&$form, FormStateInterface $form_state, $for
         if ($form_id === 'user_register_form') {
           $form['account']['notify']['#access'] = FALSE;
         }
-      } 
+      }
     }
   }
-//  Kint($form_id);
- /*Gestion accès form Add et edit */
- $nodetype = array(
-  "node_abecedaire_form", "node_abecedaire_edit_form",
-  "node_actualit__form", "node_actualit__edit_form",
-  "node_article_form", "node_article_edit_form",
-  "node_documents_form", "node_documents_edit_form",
-  "node_notes_de_lectures_form", "node_notes_de_lectures_edit_form",
-  "node_page_form", "node_page_edit_form",
-  "node_revue_de_presse_form", "node_revue_de_presse_edit_form"
-);
-// Kint($form_id);
-if (in_array($form_id, $nodetype)) {
-  $form['revision']['#access'] = FALSE;
-  $form['revision_log']['#access'] = FALSE;
-  // $form['simple_sitemap_index_now']['#access'] = FALSE;
-  // $form['status']['#access'] = TRUE;
-  // $form['comment_node_revue_de_presse']['#access'] = FALSE;
-  $form['comment_node_actualit_']['#access'] = FALSE;
-  $form['comment_node_article']['#access'] = FALSE;
-  $form['comment_node_abecedaire']['#access'] = FALSE;
-  $form['comment_node_notes_de_lectures']['#access'] = FALSE;
-  $form['comment_node_documents']['#access'] = FALSE;
-}
-
-$nodetype = array(
-  "comment_comment_node_abecedaire_form", "node_abecedaire_edit_form",
-  "comment_comment_node_article_form", "node_actualit__edit_form",
-  "comment_comment_node_article_form", "node_article_edit_form",
-  "comment_comment_node_documents_form", "node_documents_edit_form",
-  "comment_comment_node_notes_de_lectures_form", "node_notes_de_lectures_edit_form",
-  "node_abecedaire_form", "node_page_form"
-);
-
-	  
-if (in_array($form_id, $nodetype)) {
-  if (!$current_user->hasRole('administrator')){
-    $form['author']['#access'] = FALSE;	
+  //  Kint($form_id);
+  /*Gestion accès form Add et edit */
+  $nodetype = array(
+    "node_abecedaire_form",
+    "node_abecedaire_edit_form",
+    "node_actualit__form",
+    "node_actualit__edit_form",
+    "node_article_form",
+    "node_article_edit_form",
+    "node_documents_form",
+    "node_documents_edit_form",
+    "node_notes_de_lectures_form",
+    "node_notes_de_lectures_edit_form",
+    "node_page_form",
+    "node_page_edit_form",
+    "node_revue_de_presse_form",
+    "node_revue_de_presse_edit_form"
+  );
+  // Kint($form_id);
+  if (in_array($form_id, $nodetype)) {
+    $form['revision']['#access'] = FALSE;
+    $form['revision_log']['#access'] = FALSE;
+    // $form['simple_sitemap_index_now']['#access'] = FALSE;
+    // $form['status']['#access'] = TRUE;
+    // $form['comment_node_revue_de_presse']['#access'] = FALSE;
+    $form['comment_node_actualit_']['#access'] = FALSE;
+    $form['comment_node_article']['#access'] = FALSE;
+    $form['comment_node_abecedaire']['#access'] = FALSE;
+    $form['comment_node_notes_de_lectures']['#access'] = FALSE;
+    $form['comment_node_documents']['#access'] = FALSE;
   }
-     }
 
-    //  Kint($form_id);
-$nodetype = array(
- "taxonomy_term_auteurs_form",
- "taxonomy_term_r_gion_territoire_pays_form",
- "taxonomy_term_th_matiques_form",
- "media_document_edit_form", "media_document_add_form",
- "media_audio_edit_form", "media_audio_add_form",
- "media_image_edit_form", "media_image_add_form",
- "media_video_edit_form", "media_video_add_form",
- "media_remote_video_edit_form", "media_remote_video_add_form",
+  $nodetype = array(
+    "comment_comment_node_abecedaire_form",
+    "node_abecedaire_edit_form",
+    "comment_comment_node_article_form",
+    "node_actualit__edit_form",
+    "comment_comment_node_article_form",
+    "node_article_edit_form",
+    "comment_comment_node_documents_form",
+    "node_documents_edit_form",
+    "comment_comment_node_notes_de_lectures_form",
+    "node_notes_de_lectures_edit_form",
+    "node_abecedaire_form",
+    "node_page_form"
+  );
 
-);
-// Kint($form);
-if (in_array($form_id, $nodetype)) {
-  $form['revision']['#access'] = FALSE;
-  $form['revision_log']['#access'] = FALSE;
-  $form['revision_information']['#access'] = FALSE;
-  $form['relations']['#access'] = FALSE;
-  // $form['simple_sitemap_index_now']['#access'] = FALSE;
-  // $form['author']['#access'] = FALSE;
 
-  if (($form_id =="taxonomy_term_thematiques_form") || ($form_id =="taxonomy_term_categories_actualites_form")) {
-    $form['status']['#access'] = FALSE;
+  if (in_array($form_id, $nodetype)) {
+    if (!$current_user->hasRole('administrator')) {
+      $form['author']['#access'] = FALSE;
+    }
   }
-}
+
+  //  Kint($form_id);
+  $nodetype = array(
+    "taxonomy_term_auteurs_form",
+    "taxonomy_term_r_gion_territoire_pays_form",
+    "taxonomy_term_th_matiques_form",
+    "media_document_edit_form",
+    "media_document_add_form",
+    "media_audio_edit_form",
+    "media_audio_add_form",
+    "media_image_edit_form",
+    "media_image_add_form",
+    "media_video_edit_form",
+    "media_video_add_form",
+    "media_remote_video_edit_form",
+    "media_remote_video_add_form",
+
+  );
+  // Kint($form);
+  if (in_array($form_id, $nodetype)) {
+    $form['revision']['#access'] = FALSE;
+    $form['revision_log']['#access'] = FALSE;
+    $form['revision_information']['#access'] = FALSE;
+    $form['relations']['#access'] = FALSE;
+    // $form['simple_sitemap_index_now']['#access'] = FALSE;
+    // $form['author']['#access'] = FALSE;
+
+    if (($form_id == "taxonomy_term_thematiques_form") || ($form_id == "taxonomy_term_categories_actualites_form")) {
+      $form['status']['#access'] = FALSE;
+    }
+  }
 } //FORM_ALTER
 
 
 /*Remplace image texte invit�s dans page cible*/
-function interventionsdm_preprocess_field(&$variables, $hook) {
+function interventionsdm_preprocess_field(&$variables, $hook)
+{
   $element = $variables['element'];
 
   // On cible uniquement le champ image du type "article"
@@ -268,22 +289,22 @@ function interventionsdm_preprocess_field(&$variables, $hook) {
     // Kint($variables['items'][0]['content']['#media'] );
     if ($node instanceof NodeInterface && $node->hasField('field_auteur')) {
       $term = $node->get('field_auteur')->first();
-     
+
       if ($term && $term->target_id != 9) {
 
-           // Vérifie si aucune image n'a été spécifiée
-           $image_field = $node->get('field_media_image');
-    // Vérifie si le média actuellement utilisé est le média ID 197 (image par défaut)
-    if (!$image_field->isEmpty()) {
-      $current_media = $image_field->first()->entity;
+        // Vérifie si aucune image n'a été spécifiée
+        $image_field = $node->get('field_media_image');
+        // Vérifie si le média actuellement utilisé est le média ID 197 (image par défaut)
+        if (!$image_field->isEmpty()) {
+          $current_media = $image_field->first()->entity;
 
-      if ($current_media && $current_media->id() == 197) {
-        $new_media = Media::load(208); // Nouveau média de remplacement
-        if ($new_media) {
-          $variables['items'][0]['content']['#media'] = $new_media;
+          if ($current_media && $current_media->id() == 197) {
+            $new_media = Media::load(208); // Nouveau média de remplacement
+            if ($new_media) {
+              $variables['items'][0]['content']['#media'] = $new_media;
+            }
+          }
         }
-      }
-    }
       }
     }
   }
@@ -294,8 +315,9 @@ function interventionsdm_preprocess_field(&$variables, $hook) {
 /**
  * Implements hook_views_pre_render().
  */
-function interventionsdm_views_pre_render(ViewExecutable $view): void {
-  
+function interventionsdm_views_pre_render(ViewExecutable $view): void
+{
+
   if (
     $view->id() === 'contenus' &&
     in_array($view->current_display, ['page_2', 'block_4', 'block_1', 'page_7'])
@@ -303,8 +325,8 @@ function interventionsdm_views_pre_render(ViewExecutable $view): void {
     foreach ($view->result as $row) {
       /** @var \Drupal\node\Entity\Node $node */
       $node = $row->_entity;
-      
-     if ($node instanceof NodeInterface && $node->bundle() === 'article') {
+
+      if ($node instanceof NodeInterface && $node->bundle() === 'article') {
         // Vérifie si l’auteur est ID 9
         if (
           $node->hasField('field_auteur') &&
@@ -329,7 +351,7 @@ function interventionsdm_views_pre_render(ViewExecutable $view): void {
             }
           }
         }
-        }
+      }
     }
   }
 }
@@ -337,7 +359,8 @@ function interventionsdm_views_pre_render(ViewExecutable $view): void {
 /**
  * Implements hook_entity_operation_alter().
  */
-function interventionsdm_entity_operation_alter(array &$operations, EntityInterface $entity): void {
+function interventionsdm_entity_operation_alter(array &$operations, EntityInterface $entity): void
+{
   $current_user = \Drupal::currentUser();
 
   // On ne cible que les utilisateurs avec le rôle "webmaster"

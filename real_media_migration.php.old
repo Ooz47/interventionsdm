@@ -4,7 +4,7 @@ use Drupal\node\Entity\Node;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 
-$dry_run = false; // ⬅️ Mets à false pour exécuter réellement
+$dry_run = true; // ⬅️ Mets à false pour exécuter réellement
 
 $types_to_fields = [
   'article' => ['field_fichier_pdf', 'field_image'],
