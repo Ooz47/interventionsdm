@@ -700,7 +700,8 @@ form.user-form,
 form.user-login-form,
 form.user-pass,
 form.taxonomy-term-form,
-.media-form {
+form.node-form,
+.media-form{
   .form-item {
     margin: 1rem 0;
 
@@ -727,5 +728,8 @@ form.taxonomy-term-form,
         display: inline-block;
       }
     }
+    // &#field_media_image-media-library-wrapper{
+    //   border-width:0;
+    // }
   }
 }

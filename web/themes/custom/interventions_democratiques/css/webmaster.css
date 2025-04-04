@@ -32,25 +32,25 @@ main > div .layout-content.node-edit { flex-basis: 100%; }
 
 .page-admin main > div .layout-content .views-exposed-form label { margin-right: 10px; }
 
-.page-admin main > div .layout-content .views-form #edit-header, .page-admin main > div .layout-content .views-form .form-actions input#edit-submit, .page-admin main > div .layout-content form #edit-header, .page-admin main > div .layout-content form .form-actions input#edit-submit { display: none; }
+.page-admin main > div .layout-content .views-form #edit-header, .page-admin main > div .layout-content .views-form .form-actions input#edit-submit, .page-admin main > div .layout-content form.taxonomy-overview-terms #edit-header, .page-admin main > div .layout-content form.taxonomy-overview-terms .form-actions input#edit-submit, .page-admin main > div .layout-content form.taxonomy-overview-vocabularies #edit-header, .page-admin main > div .layout-content form.taxonomy-overview-vocabularies .form-actions input#edit-submit { display: none; }
 
-.page-admin main > div .layout-content .views-form table, .page-admin main > div .layout-content form table { border: 1px solid #e2e2e2; }
+.page-admin main > div .layout-content .views-form table, .page-admin main > div .layout-content form.taxonomy-overview-terms table, .page-admin main > div .layout-content form.taxonomy-overview-vocabularies table { border: 1px solid #e2e2e2; }
 
-.page-admin main > div .layout-content .views-form table thead, .page-admin main > div .layout-content form table thead { background: #cf1322; color: #ffffff !important; }
+.page-admin main > div .layout-content .views-form table thead, .page-admin main > div .layout-content form.taxonomy-overview-terms table thead, .page-admin main > div .layout-content form.taxonomy-overview-vocabularies table thead { background: #cf1322; color: #ffffff !important; }
 
-.page-admin main > div .layout-content .views-form table thead a, .page-admin main > div .layout-content form table thead a { color: #ffffff !important; }
+.page-admin main > div .layout-content .views-form table thead a, .page-admin main > div .layout-content form.taxonomy-overview-terms table thead a, .page-admin main > div .layout-content form.taxonomy-overview-vocabularies table thead a { color: #ffffff !important; }
 
-.page-admin main > div .layout-content .views-form table tbody td, .page-admin main > div .layout-content form table tbody td { padding: 2px 13px; }
+.page-admin main > div .layout-content .views-form table tbody td, .page-admin main > div .layout-content form.taxonomy-overview-terms table tbody td, .page-admin main > div .layout-content form.taxonomy-overview-vocabularies table tbody td { padding: 2px 13px; }
 
-.page-admin main > div .layout-content .views-form table tbody td.views-field-node-bulk-form, .page-admin main > div .layout-content form table tbody td.views-field-node-bulk-form { padding: 0; }
+.page-admin main > div .layout-content .views-form table tbody td.views-field-node-bulk-form, .page-admin main > div .layout-content form.taxonomy-overview-terms table tbody td.views-field-node-bulk-form, .page-admin main > div .layout-content form.taxonomy-overview-vocabularies table tbody td.views-field-node-bulk-form { padding: 0; }
 
-.page-admin main > div .layout-content .views-form table .views-field-title a, .page-admin main > div .layout-content form table .views-field-title a { font-size: 1.1rem !important; }
+.page-admin main > div .layout-content .views-form table .views-field-title a, .page-admin main > div .layout-content form.taxonomy-overview-terms table .views-field-title a, .page-admin main > div .layout-content form.taxonomy-overview-vocabularies table .views-field-title a { font-size: 1.1rem !important; }
 
-.page-admin main > div .layout-content .views-form table .views-field-type, .page-admin main > div .layout-content form table .views-field-type { font-size: 13px; }
+.page-admin main > div .layout-content .views-form table .views-field-type, .page-admin main > div .layout-content form.taxonomy-overview-terms table .views-field-type, .page-admin main > div .layout-content form.taxonomy-overview-vocabularies table .views-field-type { font-size: 13px; }
 
-.page-admin main > div .layout-content .views-form table .views-field-type a, .page-admin main > div .layout-content form table .views-field-type a { background: none; }
+.page-admin main > div .layout-content .views-form table .views-field-type a, .page-admin main > div .layout-content form.taxonomy-overview-terms table .views-field-type a, .page-admin main > div .layout-content form.taxonomy-overview-vocabularies table .views-field-type a { background: none; }
 
-.page-admin main > div .layout-content .views-form .media-library-views-form__rows .views-row, .page-admin main > div .layout-content form .media-library-views-form__rows .views-row { width: 16%; }
+.page-admin main > div .layout-content .views-form .media-library-views-form__rows .views-row, .page-admin main > div .layout-content form.taxonomy-overview-terms .media-library-views-form__rows .views-row, .page-admin main > div .layout-content form.taxonomy-overview-vocabularies .media-library-views-form__rows .views-row { width: 16%; }
 
 .page-admin #block-interventions-democratiques-primary-admin-actions a { background: none; color: #cf1322; font-weight: bold; text-decoration: none; }
 
@@ -65,7 +65,6 @@ form.user-form .form-item.form-type-password label, form.user-login-form .form-i
 
 form.user-form .form-item .password-suggestions, form.user-login-form .form-item .password-suggestions, form.user-pass .form-item .password-suggestions { display: none; }
 
-/*Page d'edition*/
 .button[value="Retirer"] { /* background: #b93333; */ /* float: right; */ border: 1px solid #d3d4d9 !important; background-image: url("data:image/svg+xml,%3csvg width='16' height='16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2.344 2.343l11.313 11.313M2.344 13.657L13.657 2.343' stroke='%2355565B' stroke-width='3'/%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: center; background-size: 0.75rem; position: absolute; z-index: 1; top: 0.625rem; overflow: hidden; width: 1.5rem; height: 1.5rem; margin: 0.3125rem; padding: 0; transition: 0.2s border-color; color: transparent; background-size: 0.75rem; text-shadow: none; font-size: 0; right: 0.625rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); display: flex; padding: 0; border: 1px solid #d3d4d9; border-radius: 50%; background-color: #fff; }
 
 .button[value="Retirer"]:hover { background-color: #ccc !important; }
@@ -78,8 +77,15 @@ form.user-form .form-item .password-suggestions, form.user-login-form .form-item
 
 .vertical-tabs__panes { padding: 0 1rem; }
 
-/*CONTENUS*/
 /* LIBRARY MEDIA */
+.view-media-library .views-exposed-form { display: flex; gap: 1rem; margin: 1rem 0; align-items: center; }
+
+#drupal-modal .media-library-item--grid { width: 25%; }
+
+.ui-dialog-buttonpane .ui-button { background: #cf1322; color: #ffffff; }
+
+.ui-dialog-buttonpane .ui-button:hover { background: #2f2f2f; }
+
 .ui-dialog { width: 100%; }
 
 .media-library-wrapper { display: flex; /* margin: -1rem -1.5rem -1rem -1rem; LTR */ /* background: red; */ }

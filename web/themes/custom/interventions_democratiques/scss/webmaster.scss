@@ -91,7 +91,10 @@ main > div .layout-content.node-edit
                 margin-right: 10px;
             }
         }
-        .views-form, form {
+        .views-form,
+         form.taxonomy-overview-terms,
+         form.taxonomy-overview-vocabularies
+          {
             #edit-header,
             .form-actions input#edit-submit {
                 display: none;
@@ -174,39 +177,8 @@ form.user-pass
   }
 }
 
-/*Page d'edition*/
-// .node-form .form-item,
-// .taxonomy-term-th-matiques-form .form-item,
-// .taxonomy-term-r-gion-territoire-pays-form .form-item,
-// .taxonomy-term-auteurs-form .form-item,
-// .media-form
-//  {
-//     margin: 1rem 0;
-//   }
-//   .node-form .form-item > label,
-//   .node-form .form-item legend {
-//     margin-right: 1rem;
-//     font-weight: 600;
-//     display: block;
-//   }
-//   .node-form .form-item .description {
-//     font-size: 0.8rem;
-//   }
-  
-//   .node-form .form-item input {
-//     padding: 5px;
-//   }
-  
-//   .node-form .form-item.form-type-radio:not(.form-item-status-value),
-//   .node-form .form-item.form-type-checkbox:not(.form-item-status-value) {
-//     margin: 0;
-//   }
-//   .node-form .form-item.form-type-radio label,
-//   .node-form .form-item.form-type-checkbox label {
-//     font-weight: 400;
-//     display: inline-block;
-//   }
-  
+
+
   .button[value="Retirer"] {
     /* background: #b93333; */
     /* float: right; */
@@ -316,14 +288,33 @@ form.user-pass
 //   }
   
 
-/*CONTENUS*/
-
 
 
 /*
  LIBRARY MEDIA
  */
+ 
+.view-media-library {
+ .views-exposed-form {
+  display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    align-items: center;
 
+ }
+
+}
+
+#drupal-modal .media-library-item--grid {
+  width: 25%;
+}
+
+.ui-dialog-buttonpane .ui-button {
+  background: $rougeprimaire;
+  color: $blanc;
+  &:hover {
+    background: $noirpolice;}
+  }
  .ui-dialog {
     width: 100%;
   }

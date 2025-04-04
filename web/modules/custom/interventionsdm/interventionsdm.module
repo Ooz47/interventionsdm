@@ -264,21 +264,26 @@ function interventionsdm_preprocess_field(&$variables, $hook) {
     $element['#bundle'] === 'article'
   ) {
     $node = $element['#object'];
-
+    // Kint($element);
+    // Kint($variables['items'][0]['content']['#media'] );
     if ($node instanceof NodeInterface && $node->hasField('field_auteur')) {
       $term = $node->get('field_auteur')->first();
-      
+     
       if ($term && $term->target_id != 9) {
-        // On remplace l'entité média par une autre (ex: ID 208)
-        $new_media = Media::load(208);
-        // Kint($variables['items'][0] );
+
+           // Vérifie si aucune image n'a été spécifiée
+           $image_field = $node->get('field_media_image');
+    // Vérifie si le média actuellement utilisé est le média ID 197 (image par défaut)
+    if (!$image_field->isEmpty()) {
+      $current_media = $image_field->first()->entity;
+
+      if ($current_media && $current_media->id() == 197) {
+        $new_media = Media::load(208); // Nouveau média de remplacement
         if ($new_media) {
-          // On remplace l'élément affiché (dans #item) par celui du média cible
-          // Kint($new_media );
           $variables['items'][0]['content']['#media'] = $new_media;
-          // $variables['items'][0]['#item'] = $new_media->get('field_media_image')->first()->getValue();
-          // $variables['items'][0]['#theme'] = 'image'; // ou 'media' selon ton render
         }
+      }
+    }
       }
     }
   }
@@ -290,6 +295,7 @@ function interventionsdm_preprocess_field(&$variables, $hook) {
  * Implements hook_views_pre_render().
  */
 function interventionsdm_views_pre_render(ViewExecutable $view): void {
+  
   if (
     $view->id() === 'contenus' &&
     in_array($view->current_display, ['page_2', 'block_4', 'block_1', 'page_7'])
@@ -297,23 +303,33 @@ function interventionsdm_views_pre_render(ViewExecutable $view): void {
     foreach ($view->result as $row) {
       /** @var \Drupal\node\Entity\Node $node */
       $node = $row->_entity;
-
-      if ($node instanceof \Drupal\node\NodeInterface && $node->bundle() === 'article') {
-        // Vérifie si l'auteur est différent de 9
+      
+     if ($node instanceof NodeInterface && $node->bundle() === 'article') {
+        // Vérifie si l’auteur est ID 9
         if (
           $node->hasField('field_auteur') &&
           !$node->get('field_auteur')->isEmpty() &&
           $node->get('field_auteur')->first()->target_id != 9
         ) {
-          // On remplace le média image
-          $replacement_media = Media::load(208);
-          if ($replacement_media && $replacement_media->hasField('field_media_image')) {
-              $node->field_media_image->setValue([
-                'target_id' => $replacement_media->id(),
-              ]);
+          // Kint($node->get('field_auteur')->first()->target_id  );
+          // Vérifie si l’image actuelle est le média par défaut (ID 197)
+          if (
+            $node->hasField('field_media_image') &&
+            !$node->get('field_media_image')->isEmpty()
+          ) {
+            $current_media = $node->get('field_media_image')->first()->entity;
+
+            if ($current_media && $current_media->id() == 197) {
+              $replacement_media = Media::load(208);
+              if ($replacement_media) {
+                $node->set('field_media_image', [
+                  'target_id' => $replacement_media->id(),
+                ]);
+              }
+            }
           }
         }
-      }
+        }
     }
   }
 }
