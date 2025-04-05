@@ -621,7 +621,8 @@ footer {
 }
 input[type="submit"],
 .comment-add a,
-.comment_forbidden a {
+.comment_forbidden a,
+article .links.inline li a {
   color: #fff;
   padding: 5px 8px;
   cursor: pointer;
