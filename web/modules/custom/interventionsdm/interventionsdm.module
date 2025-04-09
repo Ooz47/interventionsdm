@@ -108,7 +108,7 @@ function interventionsdm_menu_local_tasks_alter(
 
   foreach ($data['tabs'][1] ?? [] as $key => $tab) {
     if (in_array($key, $tabs_to_remove)) {
-      unset($data['tabs'][0][$key]);
+      unset($data['tabs'][1][$key]);
     }
   }
 
