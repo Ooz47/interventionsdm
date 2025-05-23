@@ -1,0 +1,47 @@
+<?php
+
+use Drupal\node\Entity\Node;
+
+/**
+ * Script pour assigner des images par défaut aux contenus existants.
+ * 
+ * Contexte : Lors de la migration de Drupal 7 vers Drupal 11, les file entities
+ * ont été migrés vers des media entities. Cependant, les images par défaut qui
+ * sont normalement associées à la création de nouveaux nœuds n'ont pas été
+ * appliquées aux contenus déjà existants.
+ */
+
+// Tableau associatif définissant l'ID du média par défaut pour chaque type de contenu
+$default_media_ids = [
+  'actualit_' => 196,
+  'article' => 197,
+  'documents' => 198,
+  'notes_de_lectures' => 199,
+  'revue_de_presse' => 200,
+];
+
+// Nom du champ média à remplir dans les nœuds
+$field_name = 'field_media_image';
+
+// Parcours chaque type de contenu et son média par défaut associé
+foreach ($default_media_ids as $bundle => $media_id) {
+  // Recherche tous les nœuds du type de contenu actuel qui n'ont pas d'image
+  $nids = \Drupal::entityQuery('node')
+    ->accessCheck(FALSE)  // Ignore les restrictions d'accès pour la requête
+    ->condition('type', $bundle)  // Filtre par type de contenu
+    ->notExists($field_name)  // Sélectionne uniquement les nœuds sans image
+    ->execute();
+
+  // Affiche le nombre de nœuds trouvés pour ce type de contenu
+  echo "Traitement de {$bundle} : " . count($nids) . " nœuds sans image trouvés\n";
+
+  // Charge tous les nœuds trouvés
+  $nodes = Node::loadMultiple($nids);
+
+  // Pour chaque nœud, assigne l'image par défaut et sauvegarde
+  foreach ($nodes as $node) {
+    $node->set($field_name, ['target_id' => $media_id]);  // Définit l'image par défaut
+    $node->save();  // Sauvegarde les modifications
+    echo " → Node ID: {$node->id()} ({$bundle}) mis à jour avec le média {$media_id}\n";
+  }
+}
